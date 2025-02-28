@@ -1,0 +1,1293 @@
+{
+  "ILSVRC2012_val_00000723.JPEG": {
+    "old_label": 356,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00001386.JPEG": {
+    "old_label": 356,
+    "new_label": null,
+    "detailed_labels": "Tayra",
+    "label_type": "custom"
+  },
+  "ILSVRC2012_val_00002874.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00003458.JPEG": {
+    "old_label": 356,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00003947.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00007735.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00007760.JPEG": {
+    "old_label": 356,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00008636.JPEG": {
+    "old_label": 356,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00009986.JPEG": {
+    "old_label": 356,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00011095.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00013635.JPEG": {
+    "old_label": 356,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00019059.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00021127.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00022151.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00022695.JPEG": {
+    "old_label": 356,
+    "new_label": 360,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00022744.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00022832.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00023317.JPEG": {
+    "old_label": 356,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00023803.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00024239.JPEG": {
+    "old_label": 356,
+    "new_label": [
+      356
+    ],
+    "detailed_labels": "There is a weasel and a vole (custom label)",
+    "label_type": "multilabel"
+  },
+  "ILSVRC2012_val_00024653.JPEG": {
+    "old_label": 356,
+    "new_label": 360,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00026472.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00026588.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00026889.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00028413.JPEG": {
+    "old_label": 356,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00029331.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00029560.JPEG": {
+    "old_label": 356,
+    "new_label": null,
+    "detailed_labels": "Tayra",
+    "label_type": "custom"
+  },
+  "ILSVRC2012_val_00029998.JPEG": {
+    "old_label": 356,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00030626.JPEG": {
+    "old_label": 356,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00031073.JPEG": {
+    "old_label": 356,
+    "new_label": 362,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00031587.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00031642.JPEG": {
+    "old_label": 356,
+    "new_label": 362,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00031908.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00032202.JPEG": {
+    "old_label": 356,
+    "new_label": null,
+    "detailed_labels": "The image is blurry, it could be a ferret or a polecat.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "358": "polecat, fitch, foulmart, foumart, Mustela putorius",
+      "359": "black-footed ferret, ferret, Mustela nigripes"
+    }
+  },
+  "ILSVRC2012_val_00036772.JPEG": {
+    "old_label": 356,
+    "new_label": 360,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00036861.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00037395.JPEG": {
+    "old_label": 356,
+    "new_label": null,
+    "detailed_labels": "The image is blurry, could be a ferret or a polecat.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "358": "polecat, fitch, foulmart, foumart, Mustela putorius",
+      "359": "black-footed ferret, ferret, Mustela nigripes"
+    }
+  },
+  "ILSVRC2012_val_00038150.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00039691.JPEG": {
+    "old_label": 356,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00042140.JPEG": {
+    "old_label": 356,
+    "new_label": null,
+    "detailed_labels": "Tayra",
+    "label_type": "custom"
+  },
+  "ILSVRC2012_val_00042355.JPEG": {
+    "old_label": 356,
+    "new_label": 362,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00042483.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00043742.JPEG": {
+    "old_label": 356,
+    "new_label": [
+      356
+    ],
+    "detailed_labels": "There is a weasel and a vole (custom label).",
+    "label_type": "multilabel"
+  },
+  "ILSVRC2012_val_00044001.JPEG": {
+    "old_label": 356,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00044247.JPEG": {
+    "old_label": 356,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00045854.JPEG": {
+    "old_label": 356,
+    "new_label": null,
+    "detailed_labels": "Martes",
+    "label_type": "custom"
+  },
+  "ILSVRC2012_val_00047001.JPEG": {
+    "old_label": 356,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00048255.JPEG": {
+    "old_label": 356,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00048496.JPEG": {
+    "old_label": 356,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00049636.JPEG": {
+    "old_label": 356,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00002028.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00002307.JPEG": {
+    "old_label": 357,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00002454.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Could be a mink but its characteristic features are obscured and its ears are lower than is typical.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink"
+    }
+  },
+  "ILSVRC2012_val_00005149.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00005294.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00005621.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00007870.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Could be a mink or a ferret, hard to tell in the shade. Light coloured fur.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink",
+      "359": "black-footed ferret, ferret, Mustela nigripes"
+    }
+  },
+  "ILSVRC2012_val_00008479.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Unclear image, more of an otter.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink",
+      "360": "otter"
+    }
+  },
+  "ILSVRC2012_val_00012258.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00014437.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00014833.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00015699.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00016649.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00022124.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Probably a mink, but a lot of features are obscured.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink"
+    }
+  },
+  "ILSVRC2012_val_00022236.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Probably a mink, hard to tell with young.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink"
+    }
+  },
+  "ILSVRC2012_val_00023994.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Probably a mink, hard to tell with young.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink"
+    }
+  },
+  "ILSVRC2012_val_00024374.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00025532.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Could be a mink or a ferret. Obscured, light coloured fur.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink",
+      "359": "black-footed ferret, ferret, Mustela nigripes"
+    }
+  },
+  "ILSVRC2012_val_00026106.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Probably a mink, newborn.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink"
+    }
+  },
+  "ILSVRC2012_val_00027304.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00027995.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00028458.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Unclear image.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink"
+    }
+  },
+  "ILSVRC2012_val_00029078.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Blurry image.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink"
+    }
+  },
+  "ILSVRC2012_val_00029498.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00029734.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00029822.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00030316.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00030624.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00031891.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00033047.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Characteristic features obscured.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink"
+    }
+  },
+  "ILSVRC2012_val_00034452.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00035243.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00036871.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00037447.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00039409.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00040698.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Obscured features.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink"
+    }
+  },
+  "ILSVRC2012_val_00041087.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00041633.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00043521.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00046150.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00046175.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Too young.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink"
+    }
+  },
+  "ILSVRC2012_val_00046219.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00046403.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00048096.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00048217.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00048718.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00049513.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Obscured features.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink"
+    }
+  },
+  "ILSVRC2012_val_00049545.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00049780.JPEG": {
+    "old_label": 357,
+    "new_label": null,
+    "detailed_labels": "Too far away.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "357": "mink"
+    }
+  },
+  "ILSVRC2012_val_00049992.JPEG": {
+    "old_label": 357,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00000055.JPEG": {
+    "old_label": 358,
+    "new_label": null,
+    "detailed_labels": "Too young to clearly tell.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "358": "polecat, fitch, foulmart, foumart, Mustela putorius",
+      "359": "black-footed ferret, ferret, Mustela nigripes"
+    }
+  },
+  "ILSVRC2012_val_00002076.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00002339.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00002501.JPEG": {
+    "old_label": 358,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00003081.JPEG": {
+    "old_label": 358,
+    "new_label": null,
+    "detailed_labels": "Weird light.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "358": "polecat, fitch, foulmart, foumart, Mustela putorius",
+      "359": "black-footed ferret, ferret, Mustela nigripes"
+    }
+  },
+  "ILSVRC2012_val_00004999.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00005085.JPEG": {
+    "old_label": 358,
+    "new_label": null,
+    "detailed_labels": "vole",
+    "label_type": "custom"
+  },
+  "ILSVRC2012_val_00006225.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00006629.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00006826.JPEG": {
+    "old_label": 358,
+    "new_label": null,
+    "detailed_labels": "No idea what this is.",
+    "label_type": "uncertain"
+  },
+  "ILSVRC2012_val_00007987.JPEG": {
+    "old_label": 358,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00008891.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00009881.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00010052.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00011224.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00011616.JPEG": {
+    "old_label": 358,
+    "new_label": null,
+    "detailed_labels": "Weird fur colour and markings.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "359": "black-footed ferret, ferret, Mustela nigripes"
+    }
+  },
+  "ILSVRC2012_val_00011710.JPEG": {
+    "old_label": 358,
+    "new_label": null,
+    "detailed_labels": "Blurry image.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "358": "polecat, fitch, foulmart, foumart, Mustela putorius"
+    }
+  },
+  "ILSVRC2012_val_00012633.JPEG": {
+    "old_label": 358,
+    "new_label": null,
+    "detailed_labels": "Could be a ferret, but it is incredibly blurry.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "359": "black-footed ferret, ferret, Mustela nigripes"
+    }
+  },
+  "ILSVRC2012_val_00013853.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00015211.JPEG": {
+    "old_label": 358,
+    "new_label": null,
+    "detailed_labels": "Martes",
+    "label_type": "custom"
+  },
+  "ILSVRC2012_val_00016067.JPEG": {
+    "old_label": 358,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00016220.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00016277.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00016853.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00017019.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00019825.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00022810.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00023519.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00024734.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00029173.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00029184.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00029265.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00030469.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00030791.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00031370.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00032317.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00033926.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00035129.JPEG": {
+    "old_label": 358,
+    "new_label": 357,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00037122.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00039421.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00042406.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00043015.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00043425.JPEG": {
+    "old_label": 358,
+    "new_label": 360,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00045379.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00045602.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00045898.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00048246.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00048525.JPEG": {
+    "old_label": 358,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00049220.JPEG": {
+    "old_label": 358,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00049618.JPEG": {
+    "old_label": 358,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00000326.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00000401.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00000480.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00001509.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00001791.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00001909.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00006104.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00011092.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00011477.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00012000.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00012685.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00013240.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00014233.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00014852.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00016084.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00016721.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00017666.JPEG": {
+    "old_label": 359,
+    "new_label": 356,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00018383.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00023673.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00023680.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00025162.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00025750.JPEG": {
+    "old_label": 359,
+    "new_label": null,
+    "detailed_labels": "Polecats, ferrets or both.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "358": "polecat, fitch, foulmart, foumart, Mustela putorius",
+      "359": "black-footed ferret, ferret, Mustela nigripes"
+    }
+  },
+  "ILSVRC2012_val_00026767.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00027016.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00027914.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00030982.JPEG": {
+    "old_label": 359,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00031517.JPEG": {
+    "old_label": 359,
+    "new_label": null,
+    "detailed_labels": "chinese ferret-badger",
+    "label_type": "custom"
+  },
+  "ILSVRC2012_val_00032457.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00032951.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00033362.JPEG": {
+    "old_label": 359,
+    "new_label": null,
+    "detailed_labels": "American polecat = black-footed ferret, the only one!!!",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "358": "polecat, fitch, foulmart, foumart, Mustela putorius"
+    }
+  },
+  "ILSVRC2012_val_00033474.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00034590.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00036425.JPEG": {
+    "old_label": 359,
+    "new_label": null,
+    "detailed_labels": "Unclear image.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "359": "black-footed ferret, ferret, Mustela nigripes"
+    }
+  },
+  "ILSVRC2012_val_00036439.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00036771.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00039109.JPEG": {
+    "old_label": 359,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00040026.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00040766.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00040895.JPEG": {
+    "old_label": 359,
+    "new_label": null,
+    "detailed_labels": "Martes",
+    "label_type": "custom"
+  },
+  "ILSVRC2012_val_00040904.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00041260.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00041818.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00042850.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00043098.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00043276.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00044484.JPEG": {
+    "old_label": 359,
+    "new_label": 358,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00046518.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00047022.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  },
+  "ILSVRC2012_val_00047800.JPEG": {
+    "old_label": 359,
+    "new_label": null,
+    "detailed_labels": "Could be a polecat or a ferret.",
+    "label_type": "uncertain",
+    "selected_classes": {
+      "358": "polecat, fitch, foulmart, foumart, Mustela putorius",
+      "359": "black-footed ferret, ferret, Mustela nigripes"
+    }
+  },
+  "ILSVRC2012_val_00048131.JPEG": {
+    "old_label": 359,
+    "new_label": 359,
+    "detailed_labels": "",
+    "label_type": "basic"
+  }
+}
