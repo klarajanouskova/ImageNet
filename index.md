@@ -22,7 +22,7 @@ authors:
   - name: Kateřina Hanzelková
     url:
     affiliations:
-      name: Faculty of Science, Charles University
+      name: Faculty of Science, Charles University, Czech Republic, Prague 
   - name: Klara Janouskova*
     url:
     affiliations:
@@ -141,6 +141,12 @@ toc:
     display: none;
   }
 
+  .disc {
+    border-top: 1px solid;
+    border-top-color: var(--global-divider-color) !important;
+    padding-top: 15px;
+  }
+
   /* Dark mode styles */
   html[data-theme="dark"] details {
     background-color: #424346;
@@ -188,8 +194,11 @@ toc:
 
 </style>
 
-<span style="font-size:17px; font-weight:800">Disclaimer:</span>
-By undertaking this work, we have no intention to diminish the significant contributions of ImageNet, whose value remains undeniable. It was, at the time of its publication, far ahead of all existing datasets. Given ImageNet-1k's continued broad use, especially in model evaluation, fixing the issues may help the field move forward. With current tools, we believe it is possible to improve ImageNet-1k without huge manual effort. 
+
+*We would like to thank our colleagues [Dmytro](https://dmytro.ai/), [Honza](https://jskvrna.github.io/), [Mira](https://mirapurkrabek.github.io/) and [Adela](https://subrtadel.github.io/) and others for their valuable feedback and suggestions on our blog post.*
+
+<p class="disc"><span style="font-size:17px; font-weight:800">Disclaimer:</span>
+By undertaking this work, we have no intention to diminish the significant contributions of ImageNet, whose value remains undeniable. It was, at the time of its publication, far ahead of all existing datasets. Given ImageNet-1k's continued broad use, especially in model evaluation, fixing the issues may help the field move forward. With current tools, we believe it is possible to improve ImageNet-1k without huge manual effort.</p> 
 
     
 ## Introduction to ImageNet-1k
@@ -1253,4 +1262,15 @@ In prior work<d-cite key="7"/>, MTurkers have been used to find incorrect labels
 Some of the issues, like the presence of image duplicates and near duplicates, may create an opportunity for performing meta-experiments. For instance, what if two methods with identical overall performance on ImageNet-1k differ significantly in accuracy on duplicates? What is the interpretation of a situation where a method performs well on classes with many incorrectly labeled images?
 
 In many areas of computer vision, models reached accuracy comparable to the so-called ground truth, losing the compass pointing to better performance. As we have seen, improving ground truth quality is not a simple task of checking and re-checking, but touches on some core issues of both vision and language modeling. This blog is a small step towards resetting the compass for ImageNet-1k.
- 
+
+---
+
+#### Supplementary
+
+The supplementary material, including the 'clean' validation set and expert annotations from the case study, is available on [GitHub](https://github.com/klarajanouskova/ImageNet/).
+
+<br/>
+
+#### Acknowledgements
+
+The research was supported by Czech Science Foundation Grant No. 25-15993S. This project uses the [Al-Folio](https://github.com/alshedivat/al-folio) template, available under the MIT License.
