@@ -1,0 +1,512 @@
+[
+    {
+        "category": [
+            2,
+            6
+        ],
+        "classes": {
+            "72": "black and gold garden spider, Argiope aurantia",
+            "73": "barn spider, Araneus cavaticus",
+            "74": "garden spider, Aranea diademata",
+            "77": "wolf spider, hunting spider",
+            "815": "spider web, spider's web"
+        }
+    },
+    {
+        "category": [
+            2,
+            3
+        ],
+        "classes": {
+            "101": "tusker",
+            "385": "Indian elephant, Elephas maximus",
+            "386": "African elephant, Loxodonta africana"
+        }
+    },
+    {
+        "category": [
+            2,
+            6
+        ],
+        "classes": {
+            "108": "sea anemone, anemone",
+            "328": "sea urchin",
+            "393": "anemone fish"
+        }
+    },
+    {
+        "category": [
+            2,
+            6
+        ],
+        "classes": {
+            "345": "ox",
+            "346": "water buffalo, water ox, Asiatic buffalo, Bubalus bubalis",
+            "690": "oxcart"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "400": "academic gown, academic robe, judge's robe",
+            "667": "mortarboard"
+        }
+    },
+    {
+        "category": [
+            1,
+            4,
+            6
+        ],
+        "classes": {
+            "403": "aircraft carrier, carrier, flattop, attack aircraft carrier",
+            "404": "airliner",
+            "895": "warplane, military plane",
+            "908": "wing"
+        }
+    },
+    {
+        "category": [
+            1,
+            3
+        ],
+        "classes": {
+            "409": "analog clock",
+            "530": "digital clock",
+            "531": "digital watch",
+            "892": "wall clock"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "410": "apiary, bee house",
+            "599": "honeycomb"
+        }
+    },
+    {
+        "category": [
+            2,
+            6
+        ],
+        "classes": {
+            "413": "assault rifle, assault gun",
+            "652": "military uniform",
+            "763": "revolver, six-gun, six-shooter",
+            "764": "rifle"
+        }
+    },
+    {
+        "category": [
+            1,
+            6
+        ],
+        "classes": {
+            "416": "balance beam, beam",
+            "602": "horizontal bar, high bar",
+            "702": "parallel bars, bars"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "423": "barber chair",
+            "424": "barbershop"
+        }
+    },
+    {
+        "category": [
+            3
+        ],
+        "classes": {
+            "427": "barrel, cask",
+            "756": "rain barrel"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "429": "baseball",
+            "981": "ballplayer, baseball player"
+        }
+    },
+    {
+        "category": [
+            3
+        ],
+        "classes": {
+            "435": "bathtub, bathing tub, bath, tub",
+            "876": "tub, vat"
+        }
+    },
+    {
+        "category": [
+            2,
+            4
+        ],
+        "classes": {
+            "453": "bookcase",
+            "454": "bookshop, bookstore, bookstall",
+            "624": "library"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "457": "bow tie, bow-tie, bowtie",
+            "834": "suit, suit of clothes",
+            "906": "Windsor tie"
+        }
+    },
+    {
+        "category": [
+            1,
+            6
+        ],
+        "classes": {
+            "469": "caldron, cauldron",
+            "618": "ladle",
+            "813": "spatula",
+            "910": "wooden spoon"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "472": "canoe",
+            "693": "paddle, boat paddle"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "477": "carpenter's kit, tool kit",
+            "587": "hammer",
+            "784": "screwdriver"
+        }
+    },
+    {
+        "category": [
+            1,
+            4
+        ],
+        "classes": {
+            "479": "car wheel",
+            "511": "convertible",
+            "751": "racer, race car, racing car",
+            "817": "sports car, sport car"
+        }
+    },
+    {
+        "category": [
+            1,
+            3,
+            6
+        ],
+        "classes": {
+            "481": "cassette",
+            "482": "cassette player",
+            "485": "CD player",
+            "754": "radio, wireless",
+            "848": "tape player"
+        }
+    },
+    {
+        "category": [
+            4
+        ],
+        "classes": {
+            "497": "church, church building",
+            "663": "monastery"
+        }
+    },
+    {
+        "category": [
+            1,
+            6
+        ],
+        "classes": {
+            "502": "clog, geta, patten, sabot",
+            "770": "running shoe",
+            "774": "sandal",
+            "788": "shoe shop, shoe-shop, shoe store"
+        }
+    },
+    {
+        "category": [
+            1,
+            6
+        ],
+        "classes": {
+            "504": "coffee mug",
+            "505": "coffeepot",
+            "550": "espresso maker",
+            "849": "teapot",
+            "967": "espresso",
+            "968": "cup"
+        }
+    },
+    {
+        "category": [
+            1,
+            4,
+            5,
+            6
+        ],
+        "classes": {
+            "508": "computer keyboard, keypad",
+            "526": "desk",
+            "527": "desktop computer",
+            "620": "laptop, laptop computer",
+            "664": "monitor",
+            "673": "mouse, computer mouse",
+            "681": "notebook, notebook computer",
+            "782": "screen, CRT screen",
+            "810": "space bar",
+            "878": "typewriter keyboard"
+        }
+    },
+    {
+        "category": [
+            1,
+            6
+        ],
+        "classes": {
+            "514": "cowboy boot",
+            "515": "cowboy hat, ten-gallon hat",
+            "808": "sombrero"
+        }
+    },
+    {
+        "category": [
+            1,
+            6
+        ],
+        "classes": {
+            "536": "dock, dockage, docking facility",
+            "718": "pier",
+            "821": "steel arch bridge"
+        }
+    },
+    {
+        "category": [
+            1,
+            6
+        ],
+        "classes": {
+            "541": "drum, membranophone, tympan",
+            "542": "drumstick",
+            "822": "steel drum"
+        }
+    },
+    {
+        "category": [
+            4
+        ],
+        "classes": {
+            "548": "entertainment center",
+            "598": "home theater, home theatre",
+            "851": "television, television system"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "572": "goblet",
+            "907": "wine bottle",
+            "966": "red wine"
+        }
+    },
+    {
+        "category": [
+            4
+        ],
+        "classes": {
+            "581": "grille, radiator grille",
+            "717": "pickup, pickup truck"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "595": "harvester, reaper",
+            "730": "plow, plough",
+            "856": "thresher, thrasher, threshing machine",
+            "866": "tractor"
+        }
+    },
+    {
+        "category": [
+            4
+        ],
+        "classes": {
+            "619": "lampshade, lamp shade",
+            "846": "table lamp"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "650": "microphone, mike",
+            "819": "stage"
+        }
+    },
+    {
+        "category": [
+            5
+        ],
+        "classes": {
+            "657": "missile",
+            "744": "projectile, missile"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "709": "pencil box, pencil case",
+            "710": "pencil sharpener",
+            "767": "rubber eraser, rubber, pencil eraser"
+        }
+    },
+    {
+        "category": [
+            5
+        ],
+        "classes": {
+            "713": "photocopier",
+            "742": "printer"
+        }
+    },
+    {
+        "category": [
+            3
+        ],
+        "classes": {
+            "725": "pitcher, ewer",
+            "899": "water jug"
+        }
+    },
+    {
+        "category": [
+            3
+        ],
+        "classes": {
+            "733": "pole",
+            "863": "totem pole"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "752": "racket, racquet",
+            "852": "tennis ball"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "804": "soap dispenser",
+            "896": "washbasin, handbasin, washbowl, lavabo, wash-hand basin"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "809": "soup bowl",
+            "909": "wok",
+            "925": "consomme",
+            "926": "hot pot, hotpot"
+        }
+    },
+    {
+        "category": [
+            5
+        ],
+        "classes": {
+            "836": "sunglass",
+            "837": "sunglasses, dark glasses, shades"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "923": "plate",
+            "935": "mashed potato",
+            "962": "meat loaf, meatloaf"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "928": "ice cream, icecream",
+            "960": "chocolate sauce, chocolate syrup"
+        }
+    },
+    {
+        "category": [
+            2,
+            3
+        ],
+        "classes": {
+            "947": "mushroom",
+            "991": "coral fungus",
+            "992": "agaric",
+            "993": "gyromitra",
+            "994": "stinkhorn, carrion fungus",
+            "995": "earthstar",
+            "996": "hen-of-the-woods, hen of the woods, Polyporus frondosus, Grifola frondosa",
+            "997": "bolete"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "950": "orange",
+            "951": "lemon",
+            "954": "banana"
+        }
+    },
+    {
+        "category": [
+            6
+        ],
+        "classes": {
+            "987": "corn",
+            "998": "ear, spike, capitulum"
+        }
+    }
+]
