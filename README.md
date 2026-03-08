@@ -27,6 +27,7 @@ Open `index.html` directly in your browser — no build step needed.
 cd blog && bundle install && cd ..
 
 # Build and serve (from repo root)
+mkdir -p _deploy/blog && \
 cd blog && bundle exec jekyll build \
   --config _config.yml,_config_local.yml \
   --destination ../_deploy/blog && cd .. && \
