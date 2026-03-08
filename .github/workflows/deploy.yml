@@ -30,7 +30,10 @@ jobs:
           # sass-embedded platform binaries get yanked from RubyGems
 
       - name: Install gems (always resolve fresh)
-        run: cd blog && bundle install --jobs 4
+        run: |
+          cd blog
+          bundle update sass-embedded
+          bundle install --jobs 4
 
       - name: Build blog with Jekyll
         run: |
