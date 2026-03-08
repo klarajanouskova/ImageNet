@@ -180,7 +180,7 @@ plugins:
   - jekyll-paginate-v2
   - jekyll/scholar
   - jekyll-sitemap
-  - jekyll-target-blank
+  # - jekyll-target-blank  (removed — crashes on nil href, bug in 2.0.2)
   - jekyll-twitter-plugin
   # - jekyll-imagemagick  (disabled - webp images pre-built)
   # - jekyll-minifier     (disabled in CI - requires native JS runtime)

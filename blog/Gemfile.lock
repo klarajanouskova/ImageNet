@@ -126,9 +126,6 @@ GEM
       jekyll (>= 3.7, < 5.0)
     jekyll-tabs (1.2.1)
       jekyll (>= 3.0, < 5.0)
-    jekyll-target-blank (2.0.2)
-      jekyll (>= 3.0, < 5.0)
-      nokogiri (~> 1.10)
     jekyll-toc (0.19.0)
       jekyll (>= 3.9)
       nokogiri (~> 1.12)
@@ -223,7 +220,6 @@ DEPENDENCIES
   jekyll-scholar
   jekyll-sitemap
   jekyll-tabs
-  jekyll-target-blank
   jekyll-toc
   jekyll-twitter-plugin
   jemoji

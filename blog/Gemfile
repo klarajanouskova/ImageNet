@@ -42,7 +42,7 @@ group :jekyll_plugins do
     gem 'jekyll-sitemap'
     gem 'jekyll-tabs'
     gem 'jekyll-toc'
-    gem 'jekyll-target-blank'
+    # jekyll-target-blank removed — crashes on nil href (bug in 2.0.2)
     gem 'jekyll-twitter-plugin'
     gem 'jekyll-redirect-from'
     gem 'jemoji'
