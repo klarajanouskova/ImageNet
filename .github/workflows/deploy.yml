@@ -25,8 +25,12 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.1'
-          bundler-cache: true
           working-directory: blog
+          # bundler-cache disabled: it uses --deployment mode which fails when
+          # sass-embedded platform binaries get yanked from RubyGems
+
+      - name: Install gems (always resolve fresh)
+        run: cd blog && bundle install --jobs 4
 
       - name: Build blog with Jekyll
         run: |
