@@ -32,10 +32,10 @@ group :jekyll_plugins do
     gem 'jekyll-email-protect'
     gem 'jekyll-feed'
     gem 'jekyll-get-json'
-    gem 'jekyll-imagemagick'
+    # jekyll-imagemagick removed — webp images are pre-built in assets/img/
     gem 'jekyll-jupyter-notebook'
     gem 'jekyll-link-attributes'
-    gem 'jekyll-minifier'
+    # jekyll-minifier removed — requires native JS runtime (mini_racer)
     gem 'jekyll-paginate-v2'
     gem 'jekyll-regex-replace'
     gem 'jekyll-scholar'
@@ -46,7 +46,7 @@ group :jekyll_plugins do
     gem 'jekyll-twitter-plugin'
     gem 'jekyll-redirect-from'
     gem 'jemoji'
-    gem 'mini_racer'
+    # mini_racer removed — was only needed by jekyll-minifier
     gem 'unicode_utils'
     gem 'webrick'
 end

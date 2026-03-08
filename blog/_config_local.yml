@@ -181,13 +181,13 @@ plugins:
   - jekyll-diagrams
   - jekyll-email-protect
   - jekyll-feed
-  - jekyll-imagemagick
-  - jekyll-minifier
   - jekyll-paginate-v2
   - jekyll/scholar
   - jekyll-sitemap
   - jekyll-target-blank
   - jekyll-twitter-plugin
+  # - jekyll-imagemagick  (removed — webp images pre-built)
+  # - jekyll-minifier     (removed — requires native JS runtime)
   # - jemoji
 
 # Sitemap settings
@@ -265,7 +265,7 @@ more_authors_animation_delay: 10  # more authors are revealed on click using ani
 # -----------------------------------------------------------------------------
 
 imagemagick:
-  enabled: true # enables responsive images for your site (recomended, see https://github.com/alshedivat/al-folio/issues/537)
+  enabled: false # disabled — webp images pre-built in assets/img/
   widths:
     - 480
     - 800
