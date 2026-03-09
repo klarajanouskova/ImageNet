@@ -48,6 +48,7 @@ jobs:
         run: |
           cp index.html _deploy/index.html
           cp config.js  _deploy/config.js
+          cp -r images   _deploy/images
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
