@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aiming for Perfect ImageNet-1K</title>
   <meta name="description" content="Research hub for ImageNet-1K reannotation, benchmarking, and analysis — Visual Recognition Group, Czech Technical University in Prague.">
+  <link rel="icon" type="image/png" href="./blog/assets/img/vrg_favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -225,6 +226,37 @@
     }
     .hero-affiliation a { color: var(--accent); }
 
+    .hero-people {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .hero-people-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 4px 20px;
+    }
+    .hero-contributors,
+    .hero-acknowledgments {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .people-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .people-names {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
     /* ============================================================
        Sections
        ============================================================ */
@@ -258,14 +290,82 @@
       background: var(--bg-elevated);
       border: 1px solid var(--border);
       border-radius: var(--radius-lg);
-      padding: 22px 24px;
+      padding: 0;
       display: flex;
       flex-direction: column;
       transition: border-color 0.2s, box-shadow 0.2s;
+      overflow: hidden;
     }
     .project-card:hover {
       border-color: var(--accent-light);
       box-shadow: 0 2px 16px var(--shadow-tint);
+    }
+
+    .project-teaser {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      background: var(--accent-bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+    .project-teaser img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Theme-aware teaser images */
+    .teaser-dark  { display: none; }
+    .teaser-light { display: block; }
+    [data-theme="dark"] .teaser-dark  { display: block; }
+    [data-theme="dark"] .teaser-light { display: none; }
+
+    /* 6-image duplicate grid (mimics blog Figure 15) */
+    .teaser-duplicates {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      height: 100%;
+    }
+    .teaser-dup-left {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+    }
+    .teaser-dup-left .dup-item img { height: 90px; width: auto; border-radius: 3px; }
+    .teaser-dup-right {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .teaser-dup-row {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+    }
+    .dup-item { text-align: center; }
+    .dup-item img { height: 72px; width: auto; border-radius: 3px; }
+    .dup-label {
+      font-size: 0.55rem;
+      font-weight: 600;
+      margin-top: 2px;
+      line-height: 1.2;
+    }
+    .dup-label.correct { color: #16a34a; }
+    .dup-label.wrong   { color: #dc2626; }
+
+    .project-card-body {
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
     .project-type {
@@ -436,6 +536,17 @@
     .bibtex-copy.copied { color: #16a34a; border-color: #16a34a; }
 
     /* ============================================================
+       Dark-mode fade transition
+       ============================================================ */
+    body { transition: background 0.4s ease, color 0.4s ease; }
+    .site-nav { transition: background 0.4s ease, border-color 0.4s ease; }
+    .project-card,
+    .project-teaser,
+    .bibtex-code,
+    .bibtex-copy,
+    .site-footer { transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; }
+
+    /* ============================================================
        Footer
        ============================================================ */
     .site-footer {
@@ -538,6 +649,25 @@
         <a href="https://vrg.fel.cvut.cz" target="_blank">Visual Recognition Group</a>,
         Czech Technical University in Prague &nbsp;·&nbsp; Jiri Matas' group
       </div>
+
+      <div class="hero-people">
+        <div class="hero-people-row">
+          <div class="hero-contributors">
+            <span class="people-label">Main Contributors</span>
+            <span class="people-names">Nikita Kisel, Illia Volkov, Klara Janouskova, Jiri Matas</span>
+          </div>
+        </div>
+        <div class="hero-people-row">
+          <div class="hero-acknowledgments">
+            <span class="people-label">Annotators</span>
+            <span class="people-names">Tetiana, Evita, Armands, Filip, Larisa, Richard, Kaci</span>
+          </div>
+          <div class="hero-acknowledgments">
+            <span class="people-label">Wildlife Expert</span>
+            <span class="people-names">Katka</span>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ===== PROJECTS ===== -->
@@ -547,6 +677,43 @@
 
         <!-- Card 1: Blog post -->
         <div class="project-card">
+          <div class="project-teaser">
+            <div class="teaser-duplicates">
+              <div class="teaser-dup-left">
+                <div class="dup-item">
+                  <img src="./blog/assets/img/2025-04-28-imagenet-flaws/val_lynx.png" alt="lynx">
+                  <div class="dup-label wrong">"lynx, …" ✗</div>
+                </div>
+              </div>
+              <div class="teaser-dup-right">
+                <div class="teaser-dup-row">
+                  <div class="dup-item">
+                    <img src="./blog/assets/img/2025-04-28-imagenet-flaws/timber_wolf.png" alt="timber wolf">
+                    <div class="dup-label correct">"timber wolf" ✓</div>
+                  </div>
+                  <div class="dup-item">
+                    <img src="./blog/assets/img/2025-04-28-imagenet-flaws/dingo.png" alt="dingo">
+                    <div class="dup-label wrong">"dingo, …" ✗</div>
+                  </div>
+                  <div class="dup-item">
+                    <img src="./blog/assets/img/2025-04-28-imagenet-flaws/white_wolf.png" alt="white wolf">
+                    <div class="dup-label wrong">"white wolf" ✗</div>
+                  </div>
+                </div>
+                <div class="teaser-dup-row">
+                  <div class="dup-item">
+                    <img src="./blog/assets/img/2025-04-28-imagenet-flaws/red_wolf.png" alt="red wolf">
+                    <div class="dup-label wrong">"red wolf, …" ✗</div>
+                  </div>
+                  <div class="dup-item">
+                    <img src="./blog/assets/img/2025-04-28-imagenet-flaws/coyote.png" alt="coyote">
+                    <div class="dup-label wrong">"coyote, …" ✗</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-body">
           <div class="project-type">Blog Post · ICLR 2025</div>
           <div class="project-title">Flaws of ImageNet, Computer Vision's Favorite Dataset</div>
           <div class="project-authors">Nikita Kisel, Illia Volkov, Kateřina Hanzelková, Klara Janouskova*, Jiri Matas</div>
@@ -562,10 +729,16 @@
               Read Post
             </a>
           </div>
+          </div>
         </div>
 
         <!-- Card 2: BMVC 2025 paper -->
         <div class="project-card">
+          <div class="project-teaser">
+            <img src="./images/methods.png" alt="Precision-based fusion" class="teaser-light">
+            <img src="./images/methods_dark.png" alt="Precision-based fusion" class="teaser-dark">
+          </div>
+          <div class="project-card-body">
           <div class="project-type">Paper · BMVC 2025</div>
           <div class="project-title">Image Recognition with Vision and Language Embeddings of VLMs</div>
           <div class="project-authors">Illia Volkov, Nikita Kisel, Klara Janouskova, Jiri Matas</div>
@@ -582,14 +755,19 @@
               arXiv
             </a>
           </div>
+          </div>
         </div>
 
         <!-- Card 3: MLLM paper -->
         <div class="project-card">
-          <div class="project-type">Paper · arXiv coming soon</div>
+          <div class="project-teaser">
+            <img src="./images/tasks.png" alt="MLLM classification tasks">
+          </div>
+          <div class="project-card-body">
+          <div class="project-type">Paper · arXiv 2025</div>
           <div class="project-title">Multimodal Large Language Models as Image Classifiers</div>
           <div class="project-authors">Nikita Kisel, Illia Volkov, Kateřina Hanzelková, Klara Janouskova, Jiri Matas</div>
-          <div class="project-venue">arXiv preprint (coming soon)</div>
+          <div class="project-venue">arXiv preprint, 2025</div>
           <p class="project-desc">
             We benchmark multimodal large language models as image classifiers on ImageNet-1K and a
             partially reannotated variant, revealing how annotation noise affects model rankings and
@@ -597,12 +775,17 @@
             label ambiguity.
           </p>
           <div class="project-links">
-            <span class="project-badge badge-soon">arXiv soon</span>
+            <a class="project-link" href="https://arxiv.org/abs/2603.06578" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              arXiv
+            </a>
+          </div>
           </div>
         </div>
 
         <!-- Card 4: Complete reannotation WIP -->
         <div class="project-card">
+          <div class="project-card-body">
           <div class="project-type">Dataset · Work in Progress</div>
           <div class="project-title">ImageNet-1K Complete Reannotation</div>
           <div class="project-authors">Visual Recognition Group, CTU Prague</div>
@@ -614,6 +797,7 @@
           </p>
           <div class="project-links">
             <span class="project-badge badge-wip">Work in Progress</span>
+          </div>
           </div>
         </div>
 
@@ -682,11 +866,15 @@
 
         <!-- Pub 3: MLLM paper -->
         <div class="pub-item">
-          <div class="pub-title">Multimodal Large Language Models as Image Classifiers</div>
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2603.06578" target="_blank">
+              Multimodal Large Language Models as Image Classifiers
+            </a>
+          </div>
           <div class="pub-authors">Nikita Kisel, Illia Volkov, Kateřina Hanzelková, Klara Janouskova, Jiri Matas</div>
-          <div class="pub-venue">arXiv preprint (coming soon)</div>
+          <div class="pub-venue">arXiv preprint, 2025</div>
           <div class="pub-links">
-            <span class="pub-link-disabled">arXiv soon</span>
+            <a class="pub-link" href="https://arxiv.org/abs/2603.06578" target="_blank">arXiv</a>
             <button class="pub-link" onclick="toggleBibtex('bib3')">BibTeX</button>
           </div>
           <div class="bibtex-wrapper">
@@ -698,7 +886,8 @@
              Hanzelkov{\'a}, Kate{\v{r}}ina and
              Janouskova, Klara and Matas, Jiri},
   journal = {arXiv preprint},
-  year    = {2025}
+  year    = {2025},
+  url     = {https://arxiv.org/abs/2603.06578}
 }</pre>
             </div>
           </div>
@@ -720,7 +909,7 @@
   </footer>
 
   <script>
-    // Theme toggle (light/dark)
+    // Theme toggle (light/dark) with smooth fade
     const themeToggle = document.getElementById('theme-toggle');
     themeToggle.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme');
