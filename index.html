@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aiming for Perfect ImageNet-1K</title>
+  <meta name="description" content="Research hub for ImageNet-1K reannotation, benchmarking, and analysis — Visual Recognition Group, Czech Technical University in Prague.">
+  <link rel="icon" type="image/png" href="./blog/assets/img/vrg_favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       CSS Custom Properties — Theme System
+       ============================================================ */
+    :root {
+      --nav-h:  58px;
+      --max-w:  1040px;
+      --pad-x:  40px;
+
+      --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+    }
+
+    /* Mustard Yellow — Light */
+    :root, [data-color="mustard"] {
+      --bg:           #fafaf9;
+      --bg-elevated:  #ffffff;
+      --text:         #1c1917;
+      --muted:        #78716c;
+      --subtle:       #a8a29e;
+      --accent:       #b8860b;
+      --accent-hover: #956c09;
+      --accent-light: #d4a017;
+      --accent-bg:    #fdf8e3;
+      --teaser-bg:    #fefcf0;
+      --border:       #e7e5e4;
+      --nav-bg:       rgba(250, 250, 249, 0.92);
+      --shadow-tint:  rgba(184, 134, 11, 0.1);
+    }
+
+    /* Mustard Yellow — Dark */
+    [data-theme="dark"][data-color="mustard"],
+    [data-theme="dark"]:not([data-color]) {
+      --bg:           #0f0e09;
+      --bg-elevated:  #1a1810;
+      --text:         #e8e6e3;
+      --muted:        #9ca3af;
+      --subtle:       #64748b;
+      --accent:       #e8b820;
+      --accent-hover: #d4a017;
+      --accent-light: #f5cc40;
+      --accent-bg:    #1d180a;
+      --teaser-bg:    #1d180a;
+      --border:       #2a2610;
+      --nav-bg:       rgba(15, 14, 9, 0.92);
+      --shadow-tint:  rgba(232, 184, 32, 0.15);
+    }
+
+    /* Purple accents — Light (neutral gray/white background) */
+    [data-color="purple"] {
+      --bg:           #fafaf9;
+      --bg-elevated:  #ffffff;
+      --text:         #1c1917;
+      --muted:        #78716c;
+      --subtle:       #a8a29e;
+      --accent:       #7c3aed;
+      --accent-hover: #6d28d9;
+      --accent-light: #8b5cf6;
+      --accent-bg:    #f5f5f5;
+      --teaser-bg:    #fafafa;
+      --border:       #e7e5e4;
+      --nav-bg:       rgba(250, 250, 249, 0.92);
+      --shadow-tint:  rgba(124, 58, 237, 0.12);
+    }
+
+    /* Purple accents — Dark (neutral dark background) */
+    [data-theme="dark"][data-color="purple"] {
+      --bg:           #0f0e09;
+      --bg-elevated:  #1a1810;
+      --text:         #e8e6e3;
+      --muted:        #9ca3af;
+      --subtle:       #64748b;
+      --accent:       #a78bfa;
+      --accent-hover: #c4b5fd;
+      --accent-light: #c4b5fd;
+      --accent-bg:    #1d180a;
+      --teaser-bg:    #1d180a;
+      --border:       #2a2610;
+      --nav-bg:       rgba(15, 14, 9, 0.92);
+      --shadow-tint:  rgba(167, 139, 250, 0.15);
+    }
+
+    /* ============================================================
+       Reset & Base
+       ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; scroll-padding-top: calc(var(--nav-h) + 16px); }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding-top: var(--nav-h);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; transition: color 0.15s; }
+    a:hover { color: var(--accent-hover); }
+    strong { font-weight: 600; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ============================================================
+       Navigation
+       ============================================================ */
+    .site-nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: var(--nav-h);
+      background: var(--nav-bg);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      padding: 0 var(--pad-x);
+    }
+
+    .nav-inner {
+      max-width: var(--max-w);
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-name {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .nav-name:hover { color: var(--accent-hover); }
+
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: 0.875rem; color: var(--muted); font-weight: 400; transition: color 0.15s; }
+    .nav-links a:hover { color: var(--accent); }
+
+    .theme-toggle {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      cursor: pointer;
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: border-color 0.15s, color 0.15s;
+      flex-shrink: 0;
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .theme-toggle svg { width: 14px; height: 14px; }
+    .icon-sun  { display: none; }
+    .icon-moon { display: block; }
+    [data-theme="dark"] .icon-sun  { display: block; }
+    [data-theme="dark"] .icon-moon { display: none; }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-toggle span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.2s, opacity 0.2s; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ============================================================
+       Main Content
+       ============================================================ */
+    main { max-width: var(--max-w); margin: 0 auto; padding: 0 var(--pad-x); }
+
+    /* ============================================================
+       Hero
+       ============================================================ */
+    .hero {
+      padding: 72px 0 56px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .hero-title {
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .hero-desc {
+      font-size: 0.9875rem;
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 700px;
+    }
+
+    .hero-affiliation {
+      margin-top: 24px;
+      font-size: 0.82rem;
+      color: var(--subtle);
+    }
+    .hero-affiliation a { color: var(--accent); }
+
+    .hero-people {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .hero-people-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 4px 20px;
+    }
+    .hero-contributors,
+    .hero-acknowledgments {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .people-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+    .people-names {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* ============================================================
+       Sections
+       ============================================================ */
+    .section {
+      padding: 56px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .section:last-child { border-bottom: none; }
+
+    .section-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      margin-bottom: 28px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+    }
+
+    /* ============================================================
+       Project Cards
+       ============================================================ */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .project-card {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      overflow: hidden;
+    }
+    .project-card:hover {
+      border-color: var(--accent-light);
+      box-shadow: 0 2px 16px var(--shadow-tint);
+    }
+
+    .project-teaser {
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      background: var(--teaser-bg);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+    }
+    .project-teaser img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Theme-aware teaser images */
+    .teaser-dark  { display: none; }
+    .teaser-light { display: block; }
+    [data-theme="dark"] .teaser-dark  { display: block; }
+    [data-theme="dark"] .teaser-light { display: none; }
+
+    /* 6-image duplicate grid (mimics blog Figure 15) */
+    .teaser-duplicates {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      height: 100%;
+    }
+    .teaser-dup-left {
+      flex: 0 0 auto;
+      display: flex;
+      align-items: center;
+    }
+    .teaser-dup-left .dup-item img { height: 90px; width: auto; border-radius: 3px; }
+    .teaser-dup-right {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .teaser-dup-row {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+    }
+    .dup-item { text-align: center; }
+    .dup-item img { height: 72px; width: auto; border-radius: 3px; }
+    .dup-label {
+      font-size: 0.55rem;
+      font-weight: 600;
+      margin-top: 2px;
+      line-height: 1.2;
+    }
+    .dup-label.correct { color: #16a34a; }
+    .dup-label.wrong   { color: #dc2626; }
+
+    .project-card-body {
+      padding: 22px 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .project-type {
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-light);
+      margin-bottom: 8px;
+    }
+
+    .project-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+      line-height: 1.35;
+      color: var(--text);
+    }
+
+    .project-authors {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+      line-height: 1.5;
+    }
+
+    .project-venue {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    .project-desc {
+      font-size: 0.855rem;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 16px;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: auto;
+      align-items: center;
+    }
+
+    .project-link {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 5px 10px;
+      border-radius: var(--radius-sm);
+      transition: background 0.15s, color 0.15s;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .project-link:hover { background: var(--accent); color: var(--bg); }
+    .project-link svg { width: 11px; height: 11px; flex-shrink: 0; }
+
+    .project-badge {
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 3px 8px;
+      border-radius: 3px;
+    }
+    .badge-wip  { background: #fef3c7; color: #92400e; }
+    .badge-soon { background: var(--accent-bg); color: var(--accent); }
+    [data-theme="dark"] .badge-wip { background: #3d2000; color: #fbbf24; }
+    [data-color="purple"] .badge-wip { background: #e7e5e4; color: #5b21b6; }
+    [data-theme="dark"][data-color="purple"] .badge-wip { background: #2a2610; color: #c4b5fd; }
+
+    /* ============================================================
+       Publications
+       ============================================================ */
+    .pub-list { display: flex; flex-direction: column; }
+
+    .pub-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pub-item:first-child { border-top: 1px solid var(--border); }
+
+    .pub-title {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+    .pub-title a { color: inherit; transition: color 0.15s; }
+    .pub-title a:hover { color: var(--accent); }
+
+    .pub-authors { font-size: 0.84rem; color: var(--muted); margin-bottom: 3px; line-height: 1.5; }
+    .pub-venue   { font-size: 0.82rem; color: var(--accent); font-style: italic; margin-bottom: 10px; }
+
+    .pub-links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+
+    .pub-link {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      transition: background 0.15s, color 0.15s;
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      background: none;
+      font-family: var(--font);
+    }
+    .pub-link:hover { background: var(--accent); color: var(--bg); }
+
+    .pub-link-disabled {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--subtle);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      cursor: default;
+    }
+
+    /* BibTeX block */
+    .bibtex-wrapper { margin-top: 12px; }
+
+    .bibtex-block { display: none; margin-top: 8px; position: relative; }
+    .bibtex-block.open { display: block; }
+
+    .bibtex-code {
+      background: var(--accent-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 40px 14px 16px;
+      font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', ui-monospace, monospace;
+      font-size: 0.76rem;
+      line-height: 1.7;
+      color: var(--text);
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    .bibtex-copy {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--muted);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-family: var(--font);
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .bibtex-copy:hover { border-color: var(--accent); color: var(--accent); }
+    .bibtex-copy.copied { color: #16a34a; border-color: #16a34a; }
+
+    /* ============================================================
+       Dark-mode fade transition
+       ============================================================ */
+    body { transition: background 0.4s ease, color 0.4s ease; }
+    .site-nav { transition: background 0.4s ease, border-color 0.4s ease; }
+    .project-card,
+    .project-teaser,
+    .bibtex-code,
+    .bibtex-copy,
+    .site-footer { transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease; }
+
+    /* ============================================================
+       Footer
+       ============================================================ */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 28px var(--pad-x);
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      font-size: 0.8rem;
+      color: var(--subtle);
+    }
+    .footer-inner a { color: var(--accent); }
+
+    /* ============================================================
+       Responsive
+       ============================================================ */
+    @media (max-width: 860px) {
+      :root { --max-w: 100%; }
+    }
+
+    @media (max-width: 640px) {
+      :root { --pad-x: 18px; --nav-h: 54px; }
+
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: var(--nav-h);
+        left: 0; right: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        padding: 8px 0 16px;
+        z-index: 99;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px var(--pad-x); font-size: 0.9rem; }
+
+      .hero { padding: 48px 0 40px; }
+      .hero-title { font-size: 1.75rem; }
+
+      .projects-grid { grid-template-columns: 1fr; }
+      .section { padding: 40px 0; }
+    }
+  </style>
+  <script src="config.js"></script>
+  <script>
+    (function() {
+      var savedTheme = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      var color = (window.SITE_CONFIG && window.SITE_CONFIG.color) || 'mustard';
+      document.documentElement.setAttribute('data-theme', savedTheme || (prefersDark ? 'dark' : 'light'));
+      document.documentElement.setAttribute('data-color', color);
+    })();
+  </script>
+</head>
+<body>
+  <nav class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-name">ImageNet Research · VRG CTU</a>
+      <div class="nav-right" id="nav-right">
+        <div class="nav-links" id="nav-links">
+          <a href="#projects">Projects</a>
+          <a href="#publications">Publications</a>
+        </div>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="4"/>
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+          </svg>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="hero-eyebrow">Visual Recognition Group · CTU Prague</div>
+      <h1 class="hero-title">Aiming for Perfect ImageNet-1K</h1>
+      <p class="hero-desc">
+        ImageNet-1K has long served as the gold standard for evaluating visual recognition models.
+        As models improve, subtle yet impactful issues in its labels, class definitions, and structure
+        become increasingly consequential. This page gathers our ongoing research efforts to identify,
+        analyze, and correct the dataset — from a detailed audit of known flaws, to benchmarking
+        state-of-the-art models on corrected variants, to a full-scale reannotation.
+      </p>
+      <div class="hero-affiliation">
+        <a href="https://vrg.fel.cvut.cz" target="_blank">Visual Recognition Group</a>,
+        Czech Technical University in Prague &nbsp;·&nbsp; Jiri Matas' group
+      </div>
+
+      <div class="hero-people">
+        <div class="hero-people-row">
+          <div class="hero-contributors">
+            <span class="people-label">Main Contributors</span>
+            <span class="people-names">Nikita Kisel, Illia Volkov, Klara Janouskova, Jiri Matas</span>
+          </div>
+        </div>
+        <div class="hero-people-row">
+          <div class="hero-acknowledgments">
+            <span class="people-label">Annotators</span>
+            <span class="people-names">Tetiana, Evita, Armands, Filip, Larisa, Richard, Kaci</span>
+          </div>
+          <div class="hero-acknowledgments">
+            <span class="people-label">Wildlife Expert</span>
+            <span class="people-names">Katka</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="section" id="projects">
+      <div class="section-title">Projects</div>
+      <div class="projects-grid">
+
+        <!-- Card 1: Blog post -->
+        <div class="project-card">
+          <div class="project-teaser">
+            <div class="teaser-duplicates">
+              <div class="teaser-dup-left">
+                <div class="dup-item">
+                  <img src="./blog/assets/img/2025-04-28-imagenet-flaws/val_lynx.png" alt="lynx">
+                  <div class="dup-label wrong">"lynx, …" ✗</div>
+                </div>
+              </div>
+              <div class="teaser-dup-right">
+                <div class="teaser-dup-row">
+                  <div class="dup-item">
+                    <img src="./blog/assets/img/2025-04-28-imagenet-flaws/timber_wolf.png" alt="timber wolf">
+                    <div class="dup-label correct">"timber wolf" ✓</div>
+                  </div>
+                  <div class="dup-item">
+                    <img src="./blog/assets/img/2025-04-28-imagenet-flaws/dingo.png" alt="dingo">
+                    <div class="dup-label wrong">"dingo, …" ✗</div>
+                  </div>
+                  <div class="dup-item">
+                    <img src="./blog/assets/img/2025-04-28-imagenet-flaws/white_wolf.png" alt="white wolf">
+                    <div class="dup-label wrong">"white wolf" ✗</div>
+                  </div>
+                </div>
+                <div class="teaser-dup-row">
+                  <div class="dup-item">
+                    <img src="./blog/assets/img/2025-04-28-imagenet-flaws/red_wolf.png" alt="red wolf">
+                    <div class="dup-label wrong">"red wolf, …" ✗</div>
+                  </div>
+                  <div class="dup-item">
+                    <img src="./blog/assets/img/2025-04-28-imagenet-flaws/coyote.png" alt="coyote">
+                    <div class="dup-label wrong">"coyote, …" ✗</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="project-card-body">
+          <div class="project-type">Blog Post · ICLR 2025</div>
+          <div class="project-title">Flaws of ImageNet, Computer Vision's Favorite Dataset</div>
+          <div class="project-authors">Nikita Kisel, Illia Volkov, Kateřina Hanzelková, Klara Janouskova*, Jiri Matas</div>
+          <div class="project-venue">ICLR 2025 Blogpost Track</div>
+          <p class="project-desc">
+            A comprehensive analysis of ImageNet-1K's known issues: incorrect labels, overlapping and
+            ambiguous class definitions, training–validation domain shifts, duplicate images, and
+            problems with ILSVRC class selection. A starting point for the broader reannotation effort.
+          </p>
+          <div class="project-links">
+            <a class="project-link" href="./blog/">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Read Post
+            </a>
+          </div>
+          </div>
+        </div>
+
+        <!-- Card 2: MLLM paper -->
+        <div class="project-card">
+          <div class="project-teaser">
+            <img src="./images/tasks.png" alt="MLLM classification tasks">
+          </div>
+          <div class="project-card-body">
+          <div class="project-type">Paper · CVPR 2026 Findings</div>
+          <div class="project-title">Multimodal Large Language Models as Image Classifiers</div>
+          <div class="project-authors">Nikita Kisel, Illia Volkov, Kateřina Hanzelková, Klara Janouskova, Jiri Matas</div>
+          <div class="project-venue">CVPR 2026 Findings</div>
+          <p class="project-desc">
+            We benchmark multimodal large language models as image classifiers on ImageNet-1K and a
+            partially reannotated variant, revealing how annotation noise affects model rankings and
+            benchmark reliability — and the advantage MLLMs hold over discriminative models in handling
+            label ambiguity.
+          </p>
+          <div class="project-links">
+            <a class="project-link" href="https://arxiv.org/abs/2603.06578" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              arXiv
+            </a>
+          </div>
+          </div>
+        </div>
+
+        <!-- Card 3: BMVC 2025 paper -->
+        <div class="project-card">
+          <div class="project-teaser">
+            <img src="./images/methods.png" alt="Precision-based fusion" class="teaser-light">
+            <img src="./images/methods_dark.png" alt="Precision-based fusion" class="teaser-dark">
+          </div>
+          <div class="project-card-body">
+          <div class="project-type">Paper · BMVC 2025</div>
+          <div class="project-title">Image Recognition with Vision and Language Embeddings of VLMs</div>
+          <div class="project-authors">Illia Volkov, Nikita Kisel, Klara Janouskova, Jiri Matas</div>
+          <div class="project-venue">British Machine Vision Conference (BMVC) 2025</div>
+          <p class="project-desc">
+            We evaluate dual-encoder vision–language models for image classification, examining text-guided
+            and vision-only approaches. We analyse key performance factors — prompt design, class diversity,
+            k-NN count, reference set size — and introduce a learning-free fusion method based on per-class
+            precision, tested on ImageNet-1K and corrected variants.
+          </p>
+          <div class="project-links">
+            <a class="project-link" href="https://arxiv.org/abs/2509.09311" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              arXiv
+            </a>
+          </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Complete reannotation WIP -->
+        <div class="project-card">
+          <div class="project-card-body">
+          <div class="project-type">Dataset · Work in Progress</div>
+          <div class="project-title">Doomed to Re-Annotate, Forever: The ImageNet Story</div>
+          <div class="project-authors">Visual Recognition Group, CTU Prague</div>
+          <div class="project-venue">In preparation</div>
+          <p class="project-desc">
+            A comprehensive reannotation of the full ImageNet-1K validation set, addressing label errors,
+            ambiguous class definitions, and multi-label instances identified through our prior analysis.
+            Aiming to provide a cleaner, more reliable evaluation benchmark for the community.
+          </p>
+          <div class="project-links">
+            <span class="project-badge badge-wip">Work in Progress</span>
+          </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== PUBLICATIONS ===== -->
+    <section class="section" id="publications">
+      <div class="section-title">Publications</div>
+      <div class="pub-list">
+
+        <!-- Pub 1: BMVC 2025 -->
+        <div class="pub-item">
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2509.09311" target="_blank">
+              Image Recognition with Vision and Language Embeddings of VLMs
+            </a>
+          </div>
+          <div class="pub-authors">Illia Volkov, Nikita Kisel, Klara Janouskova, Jiri Matas</div>
+          <div class="pub-venue">British Machine Vision Conference (BMVC), 2025</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://arxiv.org/abs/2509.09311" target="_blank">arXiv</a>
+            <button class="pub-link" onclick="toggleBibtex('bib1')">BibTeX</button>
+          </div>
+          <div class="bibtex-wrapper">
+            <div class="bibtex-block" id="bib1">
+              <button class="bibtex-copy" onclick="copyBibtex('bib1', this)">Copy</button>
+              <pre class="bibtex-code">@inproceedings{volkov2025image,
+  title     = {Image Recognition with Vision and Language
+               Embeddings of {VLMs}},
+  author    = {Volkov, Illia and Kisel, Nikita and
+               Janouskova, Klara and Matas, Jiri},
+  booktitle = {British Machine Vision Conference ({BMVC})},
+  year      = {2025},
+  url       = {https://arxiv.org/abs/2509.09311}
+}</pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pub 2: Blog post -->
+        <div class="pub-item">
+          <div class="pub-title">Flaws of ImageNet, Computer Vision's Favorite Dataset</div>
+          <div class="pub-authors">Nikita Kisel, Illia Volkov, Kateřina Hanzelková, Klara Janouskova*, Jiri Matas</div>
+          <div class="pub-venue">ICLR 2025 Blogpost Track, 2025</div>
+          <div class="pub-links">
+            <a class="pub-link" href="./blog/">Blog Post</a>
+            <button class="pub-link" onclick="toggleBibtex('bib2')">BibTeX</button>
+          </div>
+          <div class="bibtex-wrapper">
+            <div class="bibtex-block" id="bib2">
+              <button class="bibtex-copy" onclick="copyBibtex('bib2', this)">Copy</button>
+              <pre class="bibtex-code">@article{kisel2025flaws,
+  title   = {Flaws of {ImageNet}, Computer Vision's
+             Favorite Dataset},
+  author  = {Kisel, Nikita and Volkov, Illia and
+             Hanzelkov{\'a}, Kate{\v{r}}ina and
+             Janouskova, Klara and Matas, Jiri},
+  journal = {{ICLR} 2025 Blogpost Track},
+  year    = {2025},
+  url     = {https://klarajanouskova.github.io/ImageNet/blog/}
+}</pre>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pub 3: MLLM paper -->
+        <div class="pub-item">
+          <div class="pub-title">
+            <a href="https://arxiv.org/abs/2603.06578" target="_blank">
+              Multimodal Large Language Models as Image Classifiers
+            </a>
+          </div>
+          <div class="pub-authors">Nikita Kisel, Illia Volkov, Kateřina Hanzelková, Klara Janouskova, Jiri Matas</div>
+          <div class="pub-venue">CVPR 2026 Findings</div>
+          <div class="pub-links">
+            <a class="pub-link" href="https://arxiv.org/abs/2603.06578" target="_blank">arXiv</a>
+            <button class="pub-link" onclick="toggleBibtex('bib3')">BibTeX</button>
+          </div>
+          <div class="bibtex-wrapper">
+            <div class="bibtex-block" id="bib3">
+              <button class="bibtex-copy" onclick="copyBibtex('bib3', this)">Copy</button>
+              <pre class="bibtex-code">@article{kisel2025multimodal,
+  title   = {Multimodal Large Language Models as Image Classifiers},
+  author  = {Kisel, Nikita and Volkov, Illia and
+             Hanzelkov{\'a}, Kate{\v{r}}ina and
+             Janouskova, Klara and Matas, Jiri},
+  journal = {arXiv preprint},
+  year    = {2025},
+  url     = {https://arxiv.org/abs/2603.06578}
+}</pre>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>
+        &copy; 2025
+        <a href="https://vrg.fel.cvut.cz" target="_blank">Visual Recognition Group</a>,
+        Czech Technical University in Prague
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle (light/dark) with smooth fade
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+
+    // Nav hamburger
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks  = document.getElementById('nav-links');
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      navToggle.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('open');
+      });
+    });
+
+    // BibTeX toggle
+    function toggleBibtex(id) {
+      document.getElementById(id).classList.toggle('open');
+    }
+
+    // Copy BibTeX to clipboard
+    function copyBibtex(id, btn) {
+      const text = document.getElementById(id).querySelector('.bibtex-code').textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'Copied!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'Copy';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
