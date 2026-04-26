@@ -35,6 +35,7 @@
       --accent-hover: #956c09;
       --accent-light: #d4a017;
       --accent-bg:    #fdf8e3;
+      --teaser-bg:    #fefcf0;
       --border:       #e7e5e4;
       --nav-bg:       rgba(250, 250, 249, 0.92);
       --shadow-tint:  rgba(184, 134, 11, 0.1);
@@ -52,6 +53,7 @@
       --accent-hover: #d4a017;
       --accent-light: #f5cc40;
       --accent-bg:    #1d180a;
+      --teaser-bg:    #1d180a;
       --border:       #2a2610;
       --nav-bg:       rgba(15, 14, 9, 0.92);
       --shadow-tint:  rgba(232, 184, 32, 0.15);
@@ -68,6 +70,7 @@
       --accent-hover: #6d28d9;
       --accent-light: #8b5cf6;
       --accent-bg:    #f5f5f5;
+      --teaser-bg:    #fafafa;
       --border:       #e7e5e4;
       --nav-bg:       rgba(250, 250, 249, 0.92);
       --shadow-tint:  rgba(124, 58, 237, 0.12);
@@ -84,6 +87,7 @@
       --accent-hover: #c4b5fd;
       --accent-light: #c4b5fd;
       --accent-bg:    #1d180a;
+      --teaser-bg:    #1d180a;
       --border:       #2a2610;
       --nav-bg:       rgba(15, 14, 9, 0.92);
       --shadow-tint:  rgba(167, 139, 250, 0.15);
@@ -305,7 +309,7 @@
       width: 100%;
       height: 250px;
       overflow: hidden;
-      background: var(--accent-bg);
+      background: var(--teaser-bg);
       border-bottom: 1px solid var(--border);
       display: flex;
       align-items: center;
@@ -732,7 +736,32 @@
           </div>
         </div>
 
-        <!-- Card 2: BMVC 2025 paper -->
+        <!-- Card 2: MLLM paper -->
+        <div class="project-card">
+          <div class="project-teaser">
+            <img src="./images/tasks.png" alt="MLLM classification tasks">
+          </div>
+          <div class="project-card-body">
+          <div class="project-type">Paper · CVPR 2026 Findings</div>
+          <div class="project-title">Multimodal Large Language Models as Image Classifiers</div>
+          <div class="project-authors">Nikita Kisel, Illia Volkov, Kateřina Hanzelková, Klara Janouskova, Jiri Matas</div>
+          <div class="project-venue">CVPR 2026 Findings</div>
+          <p class="project-desc">
+            We benchmark multimodal large language models as image classifiers on ImageNet-1K and a
+            partially reannotated variant, revealing how annotation noise affects model rankings and
+            benchmark reliability — and the advantage MLLMs hold over discriminative models in handling
+            label ambiguity.
+          </p>
+          <div class="project-links">
+            <a class="project-link" href="https://arxiv.org/abs/2603.06578" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              arXiv
+            </a>
+          </div>
+          </div>
+        </div>
+
+        <!-- Card 3: BMVC 2025 paper -->
         <div class="project-card">
           <div class="project-teaser">
             <img src="./images/methods.png" alt="Precision-based fusion" class="teaser-light">
@@ -758,36 +787,11 @@
           </div>
         </div>
 
-        <!-- Card 3: MLLM paper -->
-        <div class="project-card">
-          <div class="project-teaser">
-            <img src="./images/tasks.png" alt="MLLM classification tasks">
-          </div>
-          <div class="project-card-body">
-          <div class="project-type">Paper · arXiv 2025</div>
-          <div class="project-title">Multimodal Large Language Models as Image Classifiers</div>
-          <div class="project-authors">Nikita Kisel, Illia Volkov, Kateřina Hanzelková, Klara Janouskova, Jiri Matas</div>
-          <div class="project-venue">arXiv preprint, 2025</div>
-          <p class="project-desc">
-            We benchmark multimodal large language models as image classifiers on ImageNet-1K and a
-            partially reannotated variant, revealing how annotation noise affects model rankings and
-            benchmark reliability — and the advantage MLLMs hold over discriminative models in handling
-            label ambiguity.
-          </p>
-          <div class="project-links">
-            <a class="project-link" href="https://arxiv.org/abs/2603.06578" target="_blank">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              arXiv
-            </a>
-          </div>
-          </div>
-        </div>
-
         <!-- Card 4: Complete reannotation WIP -->
         <div class="project-card">
           <div class="project-card-body">
           <div class="project-type">Dataset · Work in Progress</div>
-          <div class="project-title">ImageNet-1K Complete Reannotation</div>
+          <div class="project-title">Doomed to Re-Annotate, Forever: The ImageNet Story</div>
           <div class="project-authors">Visual Recognition Group, CTU Prague</div>
           <div class="project-venue">In preparation</div>
           <p class="project-desc">
@@ -872,7 +876,7 @@
             </a>
           </div>
           <div class="pub-authors">Nikita Kisel, Illia Volkov, Kateřina Hanzelková, Klara Janouskova, Jiri Matas</div>
-          <div class="pub-venue">arXiv preprint, 2025</div>
+          <div class="pub-venue">CVPR 2026 Findings</div>
           <div class="pub-links">
             <a class="pub-link" href="https://arxiv.org/abs/2603.06578" target="_blank">arXiv</a>
             <button class="pub-link" onclick="toggleBibtex('bib3')">BibTeX</button>
