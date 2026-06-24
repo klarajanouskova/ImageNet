@@ -130,6 +130,19 @@ section:last-child { border-bottom: none; }
   margin-bottom: 0.5rem;
 }
 
+/* --- Project attribution note ----------------------------------------- */
+.project-attribution {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin: 0.35rem 0 1rem;
+}
+.project-attribution a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+}
+.project-attribution a:hover { text-decoration: underline; }
+
 /* --- Author list ----------------------------------------- */
 .authors {
   display: flex;
@@ -453,6 +466,28 @@ section:last-child { border-bottom: none; }
 .bibtex-wrapper {
   position: relative;
 }
+.bibtex-wrapper::after {
+  content: "Not yet published";
+  position: absolute;
+  inset: 0;
+  border-radius: 0.5rem;
+  background: rgba(200, 196, 188, 0.55);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1c1917;
+  pointer-events: none;
+}
+[data-theme="dark"] .bibtex-wrapper::after {
+  background: rgba(40, 38, 35, 0.55);
+  color: #f5f5f4;
+}
 
 .bibtex-block {
   background: #1a1810;
@@ -721,7 +756,6 @@ section[id], header[id] {
   border-radius: 0.3rem;
   height: 20px;
   border: 1px solid var(--border);
-  overflow: hidden;
 }
 
 .ml-bar {
@@ -729,16 +763,26 @@ section[id], header[id] {
   background: var(--border);
   border-radius: 0.3rem;
   transition: width 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 6px;
+  box-sizing: border-box;
+  min-width: fit-content;
 }
 
 .ml-bar.highlight { background: var(--accent); }
 
 .ml-value {
-  font-size: 0.8rem;
-  font-weight: 600;
-  width: 44px;
-  flex-shrink: 0;
-  color: var(--text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: rgba(0,0,0,0.75);
+  white-space: nowrap;
+}
+
+.ml-bar.highlight .ml-value {
+  color: white;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.35);
 }
 
 /* Attribute cards */
@@ -757,6 +801,19 @@ section[id], header[id] {
   transition: border-color 0.15s, box-shadow 0.15s;
   cursor: pointer;
   user-select: none;
+  overflow: hidden;
+}
+
+.attr-preview-img {
+  display: block;
+  width: calc(100% + 2.2rem);
+  margin-left: -1.1rem;
+  margin-right: -1.1rem;
+  margin-top: -1rem;
+  margin-bottom: 0.75rem;
+  height: 150px;
+  object-fit: contain;
+  background: var(--bg);
 }
 
 .attribute-card:hover {
@@ -910,6 +967,48 @@ section[id], header[id] {
 .delta-note.pos { color: #16a34a; }
 .delta-note.neg { color: #dc2626; font-weight: 600; }
 
+/* Table key / legend block */
+.table-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.5rem;
+  padding: 0.55rem 0.9rem;
+  background: var(--accent-bg);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 0.4rem 0.4rem 0;
+  font-size: 0.79rem;
+  color: var(--muted);
+  margin-bottom: 0.65rem;
+  line-height: 1.5;
+}
+
+.table-key strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.table-key--2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.table-key--2col > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.table-key--2col > div:first-child {
+  padding-right: 2rem;
+  border-right: 1px solid var(--border);
+}
+
+.table-key--2col > div:last-child {
+  padding-left: 2rem;
+}
+
 /* Figure / table captions */
 .fig-caption {
   font-size: 0.8rem;
@@ -1001,6 +1100,32 @@ section[id], header[id] {
   font-style: italic;
   color: var(--text);
   line-height: 1.6;
+}
+
+/* Notice box */
+.notice-box {
+  display: flex;
+  gap: 0.85rem;
+  align-items: flex-start;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-light);
+  border-left: 3px solid var(--accent);
+  border-radius: 0.5rem;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0 1.25rem;
+  font-size: 0.94rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.notice-box svg { color: var(--accent); }
+
+/* Living dataset action buttons */
+.living-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.25rem;
 }
 
 /* Footer links */
