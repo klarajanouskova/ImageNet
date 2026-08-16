@@ -31,7 +31,7 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
         Paper
       </a>
-      <a class="btn btn-explore btn-sm" href="https://gonikisgo.github.io/imagenet-annotation-preview/" target="_blank">
+      <a class="btn btn-explore btn-sm" href="https://vrg.fel.cvut.cz/reimagenet?browse=1" target="_blank">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         Browse
       </a>
@@ -57,16 +57,16 @@
 <header class="hero">
   <div class="container">
     <span class="venue-badge">arXiv 2026</span>
-    <p class="project-attribution">Part of the <a href="https://klarajanouskova.github.io/ImageNet/" target="_blank" rel="noopener">Aiming for Perfect ImageNet-1K</a> project</p>
+    <p class="project-attribution">Part of the <a href="https://klarajanouskova.github.io/ImageNet/" target="_blank" rel="noopener">Aiming for Perfect ImageNet&#8209;1k</a> project</p>
     <h1 class="paper-title">
       Doomed to Re-Annotate, Forever:<br><span style="font-size:1.25em;">The ImageNet Story</span>
     </h1>
     <div class="authors">
       <span class="author">Illia Volkov<sup>1</sup></span>
       <span class="author">Nikita Kisel<sup>1</sup></span>
+      <span class="author">Tetiana Mishkina<sup>1</sup></span>
       <span class="author">Klara Janouskova<sup>1</sup> <span title="Point of Contact" style="font-size:0.75em;vertical-align:super;">✉</span></span>
       <span class="author">Jiri Matas<sup>1</sup></span>
-      <span class="author">Tetiana Mishkina</span>
     </div>
     <div class="affiliations"><sup>1</sup> Czech Technical University in Prague</div>
     <div class="affiliations" style="margin-top:4px;"><span style="font-size:0.75em;vertical-align:super;">✉</span> <a href="mailto:janoukl1@fel.cvut.cz">janoukl1@fel.cvut.cz</a></div>
@@ -75,7 +75,7 @@
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
         Paper
       </a>
-      <a class="btn btn-explore" href="https://gonikisgo.github.io/imagenet-annotation-preview/" target="_blank">
+      <a class="btn btn-explore" href="https://vrg.fel.cvut.cz/reimagenet?browse=1" target="_blank">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         Browse Annotations
       </a>
@@ -97,19 +97,19 @@
     <p class="teaser-hook-sub">50,000 images reannotated from scratch — multilabel, localized, with semantic attributes and revised class definitions.</p>
     <div class="stat-cards">
       <div class="stat-card">
-        <span class="stat-number">~13%</span>
+        <span class="stat-number">~12%</span>
         <span class="stat-label">of original labels are incorrect</span>
       </div>
       <div class="stat-card">
-        <span class="stat-number">32.7%</span>
+        <span class="stat-number">33.3%</span>
         <span class="stat-label">of images are multi-label <span class="stat-aside">vs. 14.9–21.6% in prior work</span></span>
       </div>
       <div class="stat-card">
-        <span class="stat-number">4.7%</span>
+        <span class="stat-number">3.8%</span>
         <span class="stat-label">contain no valid ImageNet&#8209;1k object at all</span>
       </div>
       <div class="stat-card">
-        <span class="stat-number">100k</span>
+        <span class="stat-number">96k</span>
         <span class="stat-label">localized bounding boxes</span>
       </div>
     </div>
@@ -127,7 +127,7 @@
     <span class="section-label">Abstract</span>
     <h2>Overview</h2>
     <p class="abstract-text">
-      ReImageNet is a from-scratch reannotation of all 50,000 images of the ImageNet&#8209;1k validation set, unifying multilabel correction, per-instance bounding-box localization, revised class definitions, and five semantic attributes — <em>rendition, reflection, text-recognition, crowd,</em> and <em>dominant</em>. The reannotation reveals that ≈13% of original labels are incorrect, 32.7% of images are multilabel (vs. 14.9–21.6% in prior work), and 4.7% contain no valid ImageNet&#8209;1k class. With corrected labels, top-1 accuracy rises <span style="white-space:nowrap;">0.7–1.4%</span> for supervised models and <span style="white-space:nowrap;">6–8%</span> for MLLMs. Annotation errors propagate into derivative benchmarks at <span style="white-space:nowrap;">1.3–4.4×</span> the original rate. All annotations and class definitions are publicly released; evaluation code will be released soon.
+      Top-1 accuracy on ImageNet&#8209;1k remains the most commonly reported metric in visual recognition. Quality issues with the dataset have been repeatedly reported, yet the original 2012 noisy labels are still predominantly used. The paper presents a comprehensive effort, which goes well beyond prior correction attempts, towards obtaining accurate and complete ImageNet&#8209;1k validation set annotations. The result, <strong>ReImageNet</strong>, includes multilabel correction, object localization, revised class definitions, and semantic attributes (<em>text-recognition, rendition, reflection, crowd, dominant</em>). The reannotation reveals that ≈12% of the original ImageNet&#8209;1k labels are incorrect, 33.3% of images are multilabel and 3.8% contain no object from an ImageNet&#8209;1k class. With the new labels, top-1 accuracy increases by up to <span style="white-space:nowrap;">1.2%</span> for supervised models and by <span style="white-space:nowrap;">5–6%</span> for MLLMs. We argue that annotation at ImageNet scale cannot realistically be completed in one pass, as errors and definitional issues are discovered only through annotating, and we build our pipeline around repeated refinement and error checking. We observed that human and LLM collaboration with appropriate tooling represents the current quality ceiling for annotation at this scale. ImageNet&#8209;1k issues propagate into its derivative test sets, indicating that the problem is structural rather than specific to any single benchmark. All annotations, class definitions, and guidelines have been publicly released; analysis code follows soon.
     </p>
   </div>
 </section>
@@ -150,7 +150,7 @@
           </div>
           <div class="label-row">
             <span class="label-chip regt">ReImageNet</span>
-            <span class="label-vals">computer mouse · space bar · keyboard · sweatshirt · cellular telephone · T-shirt · window shade · desk</span>
+            <span class="label-vals">computer mouse · space bar · computer keyboard · sweatshirt or hoodie · mobile phone · T-shirt · window covering · desk</span>
           </div>
           <span class="example-note">Correct but incomplete — 8 objects present</span>
         </div>
@@ -180,7 +180,7 @@
           </div>
           <div class="label-row">
             <span class="label-chip regt">ReImageNet</span>
-            <span class="label-vals">barbershop · television · typewriter keyboard · vase · wall clock · digital clock</span>
+            <span class="label-vals">barbershop · television · typewriter · vase · wall clock · digital clock</span>
           </div>
           <span class="example-note">Correct but incomplete — television is a reflection in mirror</span>
         </div>
@@ -195,14 +195,14 @@
           </div>
           <div class="label-row">
             <span class="label-chip regt">ReImageNet</span>
-            <span class="label-vals">sidewinder</span>
+            <span class="label-vals">sidewinder rattlesnake</span>
           </div>
           <span class="example-note">Fine-grained correction — confirmed via reverse image search</span>
         </div>
       </div>
 
     </div>
-    <p class="fig-caption">Bounding box colors encode semantic attributes (see Dataset section). <a href="https://gonikisgo.github.io/imagenet-annotation-preview/" target="_blank">Browse all 50,000 annotations →</a></p>
+    <p class="fig-caption">Bounding box colors encode semantic attributes (see Dataset section). <a href="https://vrg.fel.cvut.cz/reimagenet?browse=1" target="_blank">Browse all 50,000 annotations →</a></p>
   </div>
 </section>
 
@@ -225,7 +225,7 @@
       <div class="contribution-card">
         <span class="contribution-number">③</span>
         <div class="contribution-title">Error Propagation to Derivative Benchmarks</div>
-        <p>Quantified label noise in six widely-used ImageNet-derived test sets (ImageNet-V2, -A, -R, -Sketch, ObjectNet, CounterAnimal). Errors amplify at 1.3–4.4× the ImageNet&#8209;1k rate.</p>
+        <p>Quantified label noise in six widely-used ImageNet-derived test sets (ImageNet-V2, -A, -R, -Sketch, ObjectNet, CounterAnimal). Errors amplify at 1.7–5.8× the ImageNet&#8209;1k rate.</p>
       </div>
       <div class="contribution-card">
         <span class="contribution-number">④</span>
@@ -250,7 +250,7 @@
       <span class="includes-chip"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Evaluation code (coming soon)</span>
     </div>
 
-    <p>Every immediately visible object belonging to one of the 1,000 classes is annotated with a bounding box, label, and optional semantic attributes. Annotators follow a structured per-class preparation protocol — studying images, revising class definitions, resolving ambiguities — before any image-level labeling begins.</p>
+    <p>Every object that belongs to one of the 1,000 classes and stands out immediately when the image is viewed gets a bounding box, a label, and optional semantic attributes. Annotators label what they notice on first viewing rather than every object they could find — the original protocol asked for the latter, but objects spanning a few dozen pixels, recognizable only from context and only after zooming in, made the label set depend on how hard each annotator chose to look. Annotators follow a structured per-class preparation protocol — studying images, revising class definitions, resolving ambiguities — before any image-level labeling begins.</p>
 
     <!-- Image Partition -->
     <h3 style="margin-top:1.75rem;">Image Partition</h3>
@@ -281,40 +281,40 @@
         <text x="360" y="28" text-anchor="middle" class="pt-label pt-dark" font-size="17">A</text>
         <text x="360" y="43" text-anchor="middle" class="pt-pct pt-muted" font-size="11">100%</text>
       </g>
-      <g><title>S — single-label images (62.6%)</title>
+      <g><title>S — single-label images (62.9%)</title>
         <rect x="80" y="80" width="80" height="42" rx="7" fill="var(--bg-elevated)" stroke="var(--border)" stroke-width="1.5"/>
         <text x="120" y="100" text-anchor="middle" class="pt-label pt-dark"  font-size="16">S</text>
-        <text x="120" y="115" text-anchor="middle" class="pt-pct   pt-muted" font-size="11">62.6%</text>
+        <text x="120" y="115" text-anchor="middle" class="pt-pct   pt-muted" font-size="11">62.9%</text>
       </g>
-      <g><title>M — multi-label images (32.7%)</title>
+      <g><title>M — multi-label images (33.3%)</title>
         <rect x="320" y="80" width="80" height="42" rx="7" fill="var(--bg-elevated)" stroke="var(--border)" stroke-width="1.5"/>
         <text x="360" y="100" text-anchor="middle" class="pt-label pt-dark"  font-size="16">M</text>
-        <text x="360" y="115" text-anchor="middle" class="pt-pct   pt-muted" font-size="11">32.7%</text>
+        <text x="360" y="115" text-anchor="middle" class="pt-pct   pt-muted" font-size="11">33.3%</text>
       </g>
-      <g><title>N — no valid class (4.7%)</title>
+      <g><title>N — no valid class (3.8%)</title>
         <rect x="560" y="80" width="80" height="42" rx="7" fill="#78716c"/>
         <text x="600" y="100" text-anchor="middle" class="pt-label" font-size="16" fill="white">N</text>
-        <text x="600" y="115" text-anchor="middle" class="pt-pct"   font-size="11" fill="rgba(255,255,255,0.8)">4.7%</text>
+        <text x="600" y="115" text-anchor="middle" class="pt-pct"   font-size="11" fill="rgba(255,255,255,0.8)">3.8%</text>
       </g>
-      <g><title>S⁺ — single-label, correct (57.0%)</title>
+      <g><title>S⁺ — single-label, correct (57.4%)</title>
         <rect x="20"  y="148" width="80" height="42" rx="7" fill="#2e7d32"/>
         <text x="60"  y="168" text-anchor="middle" class="pt-label" font-size="15" fill="white">S⁺</text>
-        <text x="60"  y="183" text-anchor="middle" class="pt-pct"   font-size="11" fill="rgba(255,255,255,0.8)">57.0%</text>
+        <text x="60"  y="183" text-anchor="middle" class="pt-pct"   font-size="11" fill="rgba(255,255,255,0.8)">57.4%</text>
       </g>
-      <g><title>S⁻ — single-label, incorrect (5.6%)</title>
+      <g><title>S⁻ — single-label, incorrect (5.5%)</title>
         <rect x="140" y="148" width="80" height="42" rx="7" fill="#c62828"/>
         <text x="180" y="168" text-anchor="middle" class="pt-label" font-size="15" fill="white">S⁻</text>
-        <text x="180" y="183" text-anchor="middle" class="pt-pct"   font-size="11" fill="rgba(255,255,255,0.8)">5.6%</text>
+        <text x="180" y="183" text-anchor="middle" class="pt-pct"   font-size="11" fill="rgba(255,255,255,0.8)">5.5%</text>
       </g>
-      <g><title>M⁺ — multi-label, ImGT present (30.1%)</title>
+      <g><title>M⁺ — multi-label, ImGT present (30.6%)</title>
         <rect x="260" y="148" width="80" height="42" rx="7" fill="#43a047"/>
         <text x="300" y="168" text-anchor="middle" class="pt-label" font-size="15" fill="white">M⁺</text>
-        <text x="300" y="183" text-anchor="middle" class="pt-pct"   font-size="11" fill="rgba(255,255,255,0.8)">30.1%</text>
+        <text x="300" y="183" text-anchor="middle" class="pt-pct"   font-size="11" fill="rgba(255,255,255,0.8)">30.6%</text>
       </g>
-      <g><title>M⁻ — multi-label, ImGT absent (2.6%)</title>
+      <g><title>M⁻ — multi-label, ImGT absent (2.8%)</title>
         <rect x="380" y="148" width="80" height="42" rx="7" fill="#d32f2f"/>
         <text x="420" y="168" text-anchor="middle" class="pt-label" font-size="15" fill="white">M⁻</text>
-        <text x="420" y="183" text-anchor="middle" class="pt-pct"   font-size="11" fill="rgba(255,255,255,0.8)">2.6%</text>
+        <text x="420" y="183" text-anchor="middle" class="pt-pct"   font-size="11" fill="rgba(255,255,255,0.8)">2.8%</text>
       </g>
     </svg>
     <div class="partition-legend">
@@ -324,7 +324,7 @@
       <span><span class="legend-swatch" style="background:#d32f2f;"></span> M⁻ multi-label (ImGT absent)</span>
       <span><span class="legend-swatch" style="background:#78716c;"></span> N no valid class</span>
     </div>
-    <p class="fig-caption"><span class="fig-label">Image partition by label agreement between ReGT and original labels (ImGT).</span> ~13% of images have an incorrect original label (S⁻ + M⁻).</p>
+    <p class="fig-caption"><span class="fig-label">Image partition by label agreement between ReGT and original labels (ImGT).</span> ~12% of images have an incorrect original label (S⁻ + M⁻ + N).</p>
 
     <!-- Multilabel Rate -->
     <h3 style="margin-top:2rem;">Multilabel Rate Comparison</h3>
@@ -347,18 +347,18 @@
       </div>
       <div class="ml-row">
         <span class="ml-label" style="font-weight:700;color:var(--text);">ReImageNet (ours)</span>
-        <div class="ml-bar-wrap"><div class="ml-bar highlight" style="width:32.7%;"><span class="ml-value">32.7%</span></div></div>
+        <div class="ml-bar-wrap"><div class="ml-bar highlight" style="width:33.3%;"><span class="ml-value">33.3%</span></div></div>
       </div>
     </div>
     <p class="fig-caption"><span class="fig-label">Multilabel rate compared to prior reannotation efforts.</span> ReImageNet's rate is substantially higher, reflecting exhaustive labeling of all immediately visible objects.</p>
 
     <!-- Evaluation Protocol -->
     <h3 style="margin-top:2rem;">Evaluation Protocol</h3>
-    <p>All results use <strong>ReaL accuracy</strong> (Beyer et al., 2020) as the scoring function: a prediction is correct if it matches <em>any</em> ground-truth label for the image. For the 13 pairs of semantically duplicate ImageNet&#8209;1k classes, either class in the pair is accepted as correct — this is applied to both corrected and original labels to ensure a fair comparison. The 4.7% of images that carry no valid ImageNet&#8209;1k label are scored as automatically correct, keeping the denominator at the full 50,000 images and preserving backward compatibility with standard ImageNet&#8209;1k benchmarks.</p>
+    <p>All results use <strong>ReaL accuracy</strong> (Beyer et al., 2020) as the scoring function: a prediction is correct if it matches <em>any</em> ground-truth label for the image. For semantically equivalent ImageNet&#8209;1k class pairs (e.g. the two distinct classes both named <em>laptop computer</em>), either class in the pair is accepted as correct — this is applied to both corrected and original labels to ensure a fair comparison. The 3.8% of images that carry no valid ImageNet&#8209;1k label are left out of the evaluation entirely — no prediction can be right on an image that contains nothing to recognize — leaving <strong>48,114</strong> images in the denominator, for both the corrected and the original labels.</p>
 
     <!-- Accuracy Impact -->
-    <h3 style="margin-top:2rem;">MLLMs Score 6–8% Higher With Corrected Labels and Proper Evaluation Protocol</h3>
-    <p>If you've been reporting ImageNet&#8209;1k accuracy for an MLLM, its score is understated. Supervised models also benefit, but far less. On the hard subsets S⁻ (single-label images where the original label is wrong) and M⁻ (multilabel images where the original label is absent), MLLMs score 39–43% — well ahead of VLMs (35–39%) and supervised models (29–33%). Language-vision training gives MLLMs a clear edge on genuinely ambiguous images that pure supervised models struggle with.</p>
+    <h3 style="margin-top:2rem;">MLLMs Score 5–6% Higher With Corrected Labels and Proper Evaluation Protocol</h3>
+    <p>If you've been reporting ImageNet&#8209;1k accuracy for an MLLM, its score is understated. Supervised models gain far less — the gain nearly vanishes for the strongest of them (EVA-02: +0.05%). On the hard subsets S⁻ (single-label images where the original label is wrong) and M⁻ (multilabel images where the original label is absent), MLLMs score 40–46% — ahead of VLMs (35–43%) and supervised models (30–36%). Language-vision training gives MLLMs a clear edge on genuinely ambiguous images that pure supervised models struggle with.</p>
     <div class="table-key table-key--2col">
       <div>
         <span><strong>ImGT</strong> — original ImageNet label (single ground-truth per image)</span>
@@ -366,8 +366,8 @@
         <span><strong>Δ</strong> — ReGT − ImGT accuracy gain from using corrected labels</span>
       </div>
       <div>
-        <span><strong>S⁻</strong> — single-label images where ImGT is wrong (2,796 images)</span>
-        <span><strong>M⁻</strong> — multilabel images where ImGT label is absent (1,320 images)</span>
+        <span><strong>S⁻</strong> — single-label images where ImGT is wrong (2,763 images)</span>
+        <span><strong>M⁻</strong> — multilabel images where ImGT label is absent (1,387 images)</span>
       </div>
     </div>
     <div style="overflow-x:auto;">
@@ -381,22 +381,22 @@
             <th colspan="2" style="text-align:center;border-bottom:1px solid var(--border);">Hard images</th>
           </tr>
           <tr>
-            <th title="Single-label images where the original label is wrong (2,796 images)">S⁻</th>
-            <th title="Multilabel images where the original label is absent (1,320 images)">M⁻</th>
+            <th title="Single-label images where the original label is wrong (2,763 images)">S⁻</th>
+            <th title="Multilabel images where the original label is absent (1,387 images)">M⁻</th>
           </tr>
         </thead>
         <tbody>
           <tr class="group-header"><td colspan="6">MLLMs</td></tr>
-          <tr><td>GPT-5.4</td>  <td>71.32%</td><td>77.97%</td><td class="delta-pos">+6.65%</td><td><strong>40.88%</strong></td><td><strong>39.02%</strong></td></tr>
-          <tr><td>Qwen3-VL</td> <td>69.77%</td><td>77.57%</td><td class="delta-pos">+7.80%</td><td><strong>42.31%</strong></td><td><strong>42.27%</strong></td></tr>
-          <tr><td>Gemma 4</td>  <td>68.33%</td><td>75.41%</td><td class="delta-pos">+7.08%</td><td><strong>40.92%</strong></td><td><strong>41.44%</strong></td></tr>
+          <tr><td>GPT-5.4</td>  <td>72.54%</td><td>77.64%</td><td class="delta-pos">+5.10%</td><td><strong>46.11%</strong></td><td><strong>40.16%</strong></td></tr>
+          <tr><td>Qwen3-VL</td> <td>70.95%</td><td>77.04%</td><td class="delta-pos">+6.09%</td><td><strong>45.71%</strong></td><td><strong>44.05%</strong></td></tr>
+          <tr><td>Gemma 4</td>  <td>69.48%</td><td>74.87%</td><td class="delta-pos">+5.39%</td><td><strong>45.93%</strong></td><td><strong>42.25%</strong></td></tr>
           <tr class="group-header"><td colspan="6">VLMs</td></tr>
-          <tr><td>SigLIP2-g</td><td>85.93%</td><td>89.00%</td><td class="delta-pos">+3.07%</td><td>37.52%</td><td>35.53%</td></tr>
-          <tr><td>SigLIP2</td>  <td>84.98%</td><td>88.54%</td><td class="delta-pos">+3.56%</td><td>38.84%</td><td>37.50%</td></tr>
+          <tr><td>SigLIP2-g</td><td>86.74%</td><td>88.99%</td><td class="delta-pos">+2.25%</td><td>42.60%</td><td>35.26%</td></tr>
+          <tr><td>SigLIP2</td>  <td>85.82%</td><td>88.43%</td><td class="delta-pos">+2.61%</td><td>42.96%</td><td>36.63%</td></tr>
           <tr class="group-header"><td colspan="6">Supervised</td></tr>
-          <tr><td>EVA-02</td>   <td>90.73%</td><td>91.43%</td><td class="delta-pos">+0.70%</td><td>31.29%</td><td>30.45%</td></tr>
-          <tr><td>EffNet-L2</td><td>89.11%</td><td>90.53%</td><td class="delta-pos">+1.42%</td><td>32.62%</td><td>31.82%</td></tr>
-          <tr><td>DINOv3</td>   <td>85.84%</td><td>87.75%</td><td class="delta-pos">+1.91%</td><td>31.80%</td><td>29.32%</td></tr>
+          <tr><td>EVA-02</td>   <td>91.33%</td><td>91.38%</td><td class="delta-pos">+0.05%</td><td>35.58%</td><td>29.78%</td></tr>
+          <tr><td>EffNet-L2</td><td>89.82%</td><td>90.52%</td><td class="delta-pos">+0.70%</td><td>36.30%</td><td>31.87%</td></tr>
+          <tr><td>DINOv3</td>   <td>86.49%</td><td>87.69%</td><td class="delta-pos">+1.20%</td><td>35.87%</td><td>30.06%</td></tr>
         </tbody>
       </table>
     </div>
@@ -404,7 +404,7 @@
 
     <!-- Semantic Attributes -->
     <h3 style="margin-top:2rem;">Semantic Attributes</h3>
-    <p>Five attributes mark objects with specific visual properties, enabling targeted evaluation of model capabilities that standard top-1 accuracy blends into a single number. Click any card for an example image.</p>
+    <p>Five attributes mark objects with specific visual properties, enabling targeted evaluation of model capabilities that standard top-1 accuracy blends into a single number. Two of them shape the evaluation protocol — <em>dominant</em> identifies the object a single-label prediction should match, <em>crowd</em> marks groups of instances covered by one box — while <em>rendition</em>, <em>reflection</em>, and <em>text-recognition</em> isolate specific model capabilities. Click any card for an example image.</p>
     <div class="attribute-grid">
 
       <div class="attribute-card" data-color="#F07840">
@@ -506,8 +506,8 @@
               <p class="attr-img-cap">Both Sealyham Terriers are dominant</p>
             </div>
             <div class="attr-img-pair">
-              <img src="assets/images/attributes/ILSVRC2012_val_00047879_annotated.png" alt="Metal bottle cap — only ImageNet class, yet not dominant">
-              <p class="attr-img-cap">Bottle cap — only class, not dominant</p>
+              <img src="assets/images/attributes/ILSVRC2012_val_00047879_annotated.png" alt="Crown bottle cap — only ImageNet class, yet not dominant">
+              <p class="attr-img-cap">Crown bottle cap — only class, not dominant</p>
             </div>
           </div>
           <div class="attr-color-legend">
@@ -525,7 +525,7 @@
 
     <!-- Attribute Accuracy -->
     <h3 style="margin-top:2rem;">Accuracy by Semantic Attribute</h3>
-    <p><strong>Rendition</strong> degrades all models (−0.2% to −7.4%). <strong>Text-recognition</strong> shows the sharpest split: language-aligned models gain +7–17% by leveraging visible text, while pure supervised models suffer (EffNetV2: −4.9%). <strong>Crowd</strong> universally improves accuracy (+1–4%). <strong>Reflection</strong> generally helps (+0.3–4.0%), with GPT-5.4 and Gemma 4 as outliers (both negative).</p>
+    <p><strong>Rendition</strong> degrades every model, but unevenly: MLLMs cope best (−1.3% to −2.3%) while supervised models fall hardest (EffNetV2: −9.8%, DINOv3: −7.3%) — language supervision generalizes to stylized depictions better than supervised training alone. <strong>Text-recognition</strong> shows the sharpest split: language-aligned models gain +6–16% by leveraging visible text, while pure supervised models suffer (EffNetV2: −6.7%). <strong>Crowd</strong> helps most models (up to +3%), with SigLIP2-g the lone small exception. <strong>Reflection</strong> is positive overall and strongest for VLMs (+1.8% to +3.7%), while GPT-5.4, Gemma 4, and EffNet-L2 dip slightly.</p>
     <div class="table-key table-key--2col">
       <div>
         <span><strong>Rendition</strong> — toy, drawing, or stylized depiction of the class</span>
@@ -542,11 +542,11 @@
           <tr><th>Model</th><th>Rendition</th><th>Crowd</th><th>Reflection</th><th>Text-recog.</th></tr>
         </thead>
         <tbody>
-          <tr><td>GPT-5.4</td>   <td><span class="dn">↓ −5.4%</span></td><td><span class="up">↑ +0.7%</span></td><td><span class="dn">↓ −2.5%</span></td><td><span class="up">↑ +10.3%</span></td></tr>
-          <tr><td>Qwen3-VL</td>  <td><span class="dn">↓ −3.3%</span></td><td><span class="up">↑ +3.2%</span></td><td><span class="up">↑ +0.3%</span></td><td><span class="up">↑ +16.5%</span></td></tr>
-          <tr><td>SigLIP2-g</td> <td><span class="dn">↓ −0.2%</span></td><td><span class="up">↑ +0.7%</span></td><td><span class="up">↑ +4.0%</span></td><td><span class="up">↑ +7.5%</span></td></tr>
-          <tr><td>EVA-02</td>    <td><span class="dn">↓ −0.6%</span></td><td><span class="up">↑ +3.9%</span></td><td><span class="up">↑ +2.4%</span></td><td><span class="up">↑ +5.1%</span></td></tr>
-          <tr><td>EffNetV2</td>  <td><span class="dn">↓ −7.4%</span></td><td><span class="up">↑ +2.4%</span></td><td><span class="up">↑ +1.7%</span></td><td><span class="dn">↓ −4.9%</span></td></tr>
+          <tr><td>GPT-5.4</td>   <td><span class="dn">↓ −2.3%</span></td><td><span class="up">↑ +0.1%</span></td><td><span class="dn">↓ −2.4%</span></td><td><span class="up">↑ +9.5%</span></td></tr>
+          <tr><td>Qwen3-VL</td>  <td><span class="dn">↓ −1.3%</span></td><td><span class="up">↑ +2.8%</span></td><td><span class="up">↑ +1.2%</span></td><td><span class="up">↑ +15.6%</span></td></tr>
+          <tr><td>SigLIP2-g</td> <td><span class="dn">↓ −3.8%</span></td><td><span class="dn">↓ −0.5%</span></td><td><span class="up">↑ +3.7%</span></td><td><span class="up">↑ +6.4%</span></td></tr>
+          <tr><td>EVA-02</td>    <td><span class="dn">↓ −4.2%</span></td><td><span class="up">↑ +2.6%</span></td><td><span class="up">↑ +1.5%</span></td><td><span class="up">↑ +3.9%</span></td></tr>
+          <tr><td>EffNetV2</td>  <td><span class="dn">↓ −9.8%</span></td><td><span class="up">↑ +1.3%</span></td><td><span class="up">↑ +2.5%</span></td><td><span class="dn">↓ −6.7%</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -561,17 +561,18 @@
     <span class="section-label">Evaluation</span>
     <h2>Object-Centric Evaluation Protocols</h2>
 
-    <p>ReImageNet's bounding boxes unlock object-centric evaluation. Removing scene context reveals a stark gap: supervised models lose up to 33% accuracy on tight crops, while MLLMs are substantially more robust — reflecting their diverse training data. ExCrops recover ~10% over tight crops while remaining backward-compatible with single-label evaluation.</p>
+    <p>ReImageNet's bounding boxes unlock object-centric evaluation. We cut a tight crop around each of the 96,051 boxes (avg. 33% of the image area) and evaluate them in four settings. Removing scene context reveals a stark gap: supervised models lose up to 33% accuracy on tight crops, while MLLMs are substantially more robust — reflecting their diverse training data. The gap between <em>Any crop</em> and <em>Largest crop</em> shows that in ~10% of cases a model misses the largest object in an image yet classifies a smaller, less salient one correctly — which questions the standard center-crop evaluation. ExCrops recover ~10% over tight crops while remaining backward-compatible with single-label evaluation.</p>
 
     <div class="table-key">
       <span><strong>Largest crop</strong> — crop of the largest annotated object; approximates classical center-crop</span>
       <span><strong>Any crop</strong> — upper bound: image counted correct if any crop prediction is correct</span>
-      <span><strong>ExCrops</strong> — expanded non-overlapping crops (avg. 82% of image area); exactly one annotated object per crop</span>
+      <span><strong>All crops</strong> — every tight crop treated as an independent sample (96,051 crops, avg. 33% of image area)</span>
+      <span><strong>ExCrops</strong> — expanded non-overlapping crops (38,628 crops, avg. 82% of image area); exactly one annotated object per crop</span>
     </div>
     <div style="overflow-x:auto; margin-top:1.25rem;">
       <table class="data-table">
         <thead>
-          <tr><th>Model</th><th>Full image</th><th>Largest crop</th><th>Any crop</th><th>ExCrops</th></tr>
+          <tr><th>Model</th><th>Full image</th><th>Largest crop</th><th>Any crop</th><th>All crops</th><th>ExCrops</th></tr>
         </thead>
         <tbody>
           <tr>
@@ -579,6 +580,7 @@
             <td>75.41%</td>
             <td>69.76% <span class="delta-note">(−5.6)</span></td>
             <td>81.69% <span class="delta-note pos">(+6.3)</span></td>
+            <td>59.68% <span class="delta-note">(−15.7)</span></td>
             <td>65.78% <span class="delta-note">(−9.6)</span></td>
           </tr>
           <tr>
@@ -586,7 +588,8 @@
             <td>89.00%</td>
             <td>82.21% <span class="delta-note">(−6.8)</span></td>
             <td>92.96% <span class="delta-note pos">(+4.0)</span></td>
-            <td>71.41% <span class="delta-note">(−17.6)</span></td>
+            <td>71.41% <span class="delta-note neg">(−17.6)</span></td>
+            <td>78.87% <span class="delta-note">(−10.1)</span></td>
           </tr>
           <tr>
             <td>EVA-02</td>
@@ -594,6 +597,7 @@
             <td>80.64% <span class="delta-note">(−10.8)</span></td>
             <td>92.16% <span class="delta-note pos">(+0.7)</span></td>
             <td><strong>57.95%</strong> <span class="delta-note neg">(−33.5)</span></td>
+            <td>77.81% <span class="delta-note">(−13.6)</span></td>
           </tr>
           <tr>
             <td>DINOv3</td>
@@ -601,6 +605,7 @@
             <td>78.46% <span class="delta-note">(−9.3)</span></td>
             <td>89.75% <span class="delta-note pos">(+2.0)</span></td>
             <td>55.44% <span class="delta-note neg">(−32.3)</span></td>
+            <td>74.41% <span class="delta-note">(−13.3)</span></td>
           </tr>
         </tbody>
       </table>
@@ -615,7 +620,7 @@
     <span class="section-label">Benchmarks</span>
     <h2>Errors Don't Stay in ImageNet</h2>
 
-    <p>Label noise in ImageNet&#8209;1k propagates directly into derivative test sets, amplified at <strong>1.3–4.4× the original rate</strong>. If you evaluate on ImageNet-A, -R, or -Sketch, you're working with up to 15% mislabeled images. Any benchmark built on the ImageNet&#8209;1k taxonomy inherits its annotation flaws by construction.</p>
+    <p>Label noise in ImageNet&#8209;1k propagates directly into derivative test sets, amplified at <strong>1.7–5.8× the original rate</strong>. If you evaluate on ImageNet-A or ImageNet-Sketch, 13–15% of the labels you score against are wrong. Any benchmark built on the ImageNet&#8209;1k taxonomy inherits its annotation flaws by construction — the problem is structural, not specific to any single benchmark.</p>
 
     <div class="table-key">
       <span><strong>IN-1k error rate</strong> — label error rate in ImageNet-1k, restricted to the classes the benchmark uses</span>
@@ -629,12 +634,12 @@
           <tr><th>Benchmark</th><th># Images</th><th>IN-1k error rate</th><th>Benchmark error rate</th><th>Est. mislabeled</th></tr>
         </thead>
         <tbody>
-          <tr><td>ImageNet-V2</td>    <td>10,000</td><td>5.37%</td><td style="background:rgba(220,38,38,0.33);">11.15%</td><td>~393</td></tr>
-          <tr><td>ImageNet-A</td>     <td>7,500</td> <td>3.36%</td><td style="background:rgba(220,38,38,0.50);">14.80%</td><td>~405</td></tr>
-          <tr><td>ImageNet-R</td>     <td>30,000</td><td>3.59%</td><td style="background:rgba(220,38,38,0.04);">4.99%</td> <td>~317</td></tr>
-          <tr><td>ImageNet-Sketch</td><td>50,889</td><td>5.37%</td><td style="background:rgba(220,38,38,0.43);">13.38%</td><td>~2,650</td></tr>
-          <tr><td>ObjectNet</td>      <td>18,574</td><td>5.10%</td><td style="background:rgba(220,38,38,0.23);">8.96%</td> <td>~460</td></tr>
-          <tr><td>CounterAnimal</td>  <td>13,334</td><td>3.68%</td><td style="background:rgba(220,38,38,0.03);">4.76%</td> <td>~113</td></tr>
+          <tr><td>ImageNet-V2</td>    <td>10,000</td><td>4.74%</td><td style="background:rgba(220,38,38,0.33);">11.15%</td><td>~436</td></tr>
+          <tr><td>ImageNet-A</td>     <td>7,500</td> <td>2.57%</td><td style="background:rgba(220,38,38,0.50);">14.80%</td><td>~433</td></tr>
+          <tr><td>ImageNet-R</td>     <td>30,000</td><td>2.97%</td><td style="background:rgba(220,38,38,0.04);">4.99%</td> <td>~456</td></tr>
+          <tr><td>ImageNet-Sketch</td><td>50,889</td><td>4.74%</td><td style="background:rgba(220,38,38,0.43);">13.38%</td><td>~2,861</td></tr>
+          <tr><td>ObjectNet</td>      <td>18,574</td><td>5.30%</td><td style="background:rgba(220,38,38,0.23);">8.96%</td> <td>~436</td></tr>
+          <tr><td>CounterAnimal</td>  <td>13,334</td><td>1.95%</td><td style="background:rgba(220,38,38,0.03);">4.76%</td> <td>~293</td></tr>
         </tbody>
       </table>
     </div>
@@ -678,7 +683,7 @@
     </div>
 
     <div class="living-actions">
-      <a class="btn btn-explore" href="#" style="pointer-events:none;opacity:0.5;" aria-disabled="true">
+      <a class="btn btn-explore" href="https://vrg.fel.cvut.cz/reimagenet" target="_blank">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         Browse &amp; Report Errors
       </a>
@@ -699,8 +704,8 @@
     <div class="bibtex-wrapper">
       <pre class="bibtex-block" id="bibtex">@article{volkov2026imagenet,
   author  = {Volkov, Illia and Kisel, Nikita
-             and Janouskova, Klara and Matas, Jiri
-             and Mishkina, Tetiana},
+             and Mishkina, Tetiana and Janouskova, Klara
+             and Matas, Jiri},
   journal = {arXiv preprint},
   title   = {Doomed to Re-Annotate, Forever: The ImageNet Story},
   year    = {2026}
@@ -728,7 +733,7 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
         Dataset Download
       </a>
-      <a class="footer-link" href="https://gonikisgo.github.io/imagenet-annotation-preview/" target="_blank">
+      <a class="footer-link" href="https://vrg.fel.cvut.cz/reimagenet?browse=1" target="_blank">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
         Browse Annotations
       </a>
