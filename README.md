@@ -26,14 +26,12 @@ Open `index.html` directly in your browser — no build step needed.
 # One-time: install Ruby gems
 cd blog && bundle install && cd ..
 
-# Build and serve (from repo root)
-mkdir -p _deploy/blog && \
-cd blog && bundle exec jekyll build \
-  --config _config.yml,_config_local.yml \
-  --destination ../_deploy/blog && cd .. && \
-cp index.html _deploy/index.html && \
-python3 -m http.server 8000 --directory _deploy
+# Build and serve (from repo root; optional port argument, default 8000)
+./serve.sh
 ```
+
+`serve.sh` deletes `_deploy/` and rebuilds it from scratch on every run, so the
+local preview can never serve stale files. Never edit `_deploy/` directly.
 
 Then open:
 - Hub → http://localhost:8000/

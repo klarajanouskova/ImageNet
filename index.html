@@ -244,9 +244,7 @@
     }
     .hero-contributors,
     .hero-acknowledgments {
-      display: flex;
-      align-items: baseline;
-      gap: 6px;
+      display: block;
     }
     .people-label {
       font-size: 0.75rem;
@@ -255,10 +253,16 @@
       letter-spacing: 0.06em;
       color: var(--accent);
       white-space: nowrap;
+      margin-right: 6px;
     }
     .people-names {
       font-size: 0.82rem;
       color: var(--muted);
+    }
+    .corresponding-mark {
+      font-size: 0.72em;
+      vertical-align: super;
+      margin-left: 1px;
     }
 
     /* ============================================================
@@ -430,6 +434,9 @@
       display: inline-flex;
       align-items: center;
       gap: 5px;
+      cursor: pointer;
+      background: none;
+      font-family: var(--font);
     }
     .project-link:hover { background: var(--accent); color: var(--bg); }
     .project-link svg { width: 11px; height: 11px; flex-shrink: 0; }
@@ -449,60 +456,8 @@
     [data-theme="dark"][data-color="purple"] .badge-wip { background: #2a2610; color: #c4b5fd; }
 
     /* ============================================================
-       Publications
+       BibTeX
        ============================================================ */
-    .pub-list { display: flex; flex-direction: column; }
-
-    .pub-item {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .pub-item:first-child { border-top: 1px solid var(--border); }
-
-    .pub-title {
-      font-size: 0.9375rem;
-      font-weight: 600;
-      line-height: 1.4;
-      margin-bottom: 4px;
-      color: var(--text);
-    }
-    .pub-title a { color: inherit; transition: color 0.15s; }
-    .pub-title a:hover { color: var(--accent); }
-
-    .pub-authors { font-size: 0.84rem; color: var(--muted); margin-bottom: 3px; line-height: 1.5; }
-    .pub-venue   { font-size: 0.82rem; color: var(--accent); font-style: italic; margin-bottom: 10px; }
-
-    .pub-links { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
-
-    .pub-link {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--accent);
-      border: 1px solid var(--accent);
-      padding: 4px 10px;
-      border-radius: var(--radius-sm);
-      transition: background 0.15s, color 0.15s;
-      display: inline-flex;
-      align-items: center;
-      cursor: pointer;
-      background: none;
-      font-family: var(--font);
-    }
-    .pub-link:hover { background: var(--accent); color: var(--bg); }
-
-    .pub-link-disabled {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: var(--subtle);
-      border: 1px solid var(--border);
-      padding: 4px 10px;
-      border-radius: var(--radius-sm);
-      display: inline-flex;
-      align-items: center;
-      cursor: default;
-    }
-
-    /* BibTeX block */
     .bibtex-wrapper { margin-top: 12px; }
 
     .bibtex-block { display: none; margin-top: 8px; position: relative; }
@@ -617,7 +572,6 @@
       <a href="#" class="nav-name">ImageNet Research · VRG CTU</a>
       <div class="nav-right" id="nav-right">
         <div class="nav-links" id="nav-links">
-          <a href="#projects">Projects</a>
           <a href="#publications">Publications</a>
         </div>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
@@ -658,28 +612,71 @@
         <div class="hero-people-row">
           <div class="hero-contributors">
             <span class="people-label">Main Contributors</span>
-            <span class="people-names">Nikita Kisel, Illia Volkov, Klara Janouskova, Jiri Matas</span>
+            <span class="people-names">Nikita&nbsp;Kisel, Illia&nbsp;Volkov, Klara&nbsp;Janouskova<a class="corresponding-mark" href="mailto:janoukl1@fel.cvut.cz" title="Corresponding author — janoukl1@fel.cvut.cz">✉</a>, Jiri&nbsp;Matas</span>
           </div>
         </div>
         <div class="hero-people-row">
           <div class="hero-acknowledgments">
-            <span class="people-label">Annotators</span>
-            <span class="people-names">Tetiana, Evita, Armands, Filip, Larisa, Richard, Kaci</span>
-          </div>
-          <div class="hero-acknowledgments">
-            <span class="people-label">Wildlife Expert</span>
-            <span class="people-names">Katka</span>
+            <span class="people-label">Other Contributors, incl. Annotators</span>
+            <span class="people-names">Tetiana&nbsp;Mishkina, Matej&nbsp;Suchanek, Ruslan&nbsp;Rozumnyi, Larisa, Armands, Evita, Filip, Richard, Vojtech&nbsp;Vecerka, Tomas&nbsp;Franc, Kaci, Katka</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== PROJECTS ===== -->
-    <section class="section" id="projects">
-      <div class="section-title">Projects</div>
+    <!-- ===== PUBLICATIONS ===== -->
+    <section class="section" id="publications">
+      <div class="section-title">Publications</div>
       <div class="projects-grid">
 
-        <!-- Card 1: Blog post -->
+        <!-- Card 1: ReImageNet reannotation paper -->
+        <div class="project-card">
+          <div class="project-teaser">
+            <img src="./images/reimagenet_teaser.jpg" alt="Original vs. reannotated ImageNet labels">
+          </div>
+          <div class="project-card-body">
+          <div class="project-type">Paper · Preprint</div>
+          <div class="project-title">Doomed to Re-Annotate, Forever: The ImageNet Story</div>
+          <div class="project-authors">Illia Volkov, Nikita Kisel, Tetiana Mishkina, Klara Janouskova*, Jiri Matas</div>
+          <div class="project-venue">Preprint</div>
+          <p class="project-desc">
+            A comprehensive reannotation of the full ImageNet-1K validation set, addressing label errors,
+            ambiguous class definitions, and multi-label instances identified through our prior analysis.
+            The result, ReImageNet, provides a cleaner, more reliable evaluation benchmark for the community.
+          </p>
+          <div class="project-links">
+            <a class="project-link" href="./papers/reimagenet.pdf" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              Paper (PDF)
+            </a>
+            <a class="project-link" href="./reimagenet/">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Project Page
+            </a>
+            <a class="project-link" href="https://huggingface.co/datasets/vrg-prague/ReImageNet" target="_blank">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Dataset
+            </a>
+            <button class="project-link" onclick="toggleBibtex('bib-reimagenet')">BibTeX</button>
+          </div>
+          <div class="bibtex-wrapper">
+            <div class="bibtex-block" id="bib-reimagenet">
+              <button class="bibtex-copy" onclick="copyBibtex('bib-reimagenet', this)">Copy</button>
+              <pre class="bibtex-code">@misc{volkov2026reimagenet,
+  title  = {Doomed to Re-Annotate, Forever:
+            The {ImageNet} Story},
+  author = {Volkov, Illia and Kisel, Nikita and
+            Mishkina, Tetiana and
+            Janouskova, Klara and Matas, Jiri},
+  year   = {2026},
+  note   = {Preprint}
+}</pre>
+            </div>
+          </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Blog post -->
         <div class="project-card">
           <div class="project-teaser">
             <div class="teaser-duplicates">
@@ -732,11 +729,27 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               Read Post
             </a>
+            <button class="project-link" onclick="toggleBibtex('bib-flaws')">BibTeX</button>
+          </div>
+          <div class="bibtex-wrapper">
+            <div class="bibtex-block" id="bib-flaws">
+              <button class="bibtex-copy" onclick="copyBibtex('bib-flaws', this)">Copy</button>
+              <pre class="bibtex-code">@article{kisel2025flaws,
+  title   = {Flaws of {ImageNet}, Computer Vision's
+             Favorite Dataset},
+  author  = {Kisel, Nikita and Volkov, Illia and
+             Hanzelkov{\'a}, Kate{\v{r}}ina and
+             Janouskova, Klara and Matas, Jiri},
+  journal = {{ICLR} 2025 Blogpost Track},
+  year    = {2025},
+  url     = {https://klarajanouskova.github.io/ImageNet/blog/}
+}</pre>
+            </div>
           </div>
           </div>
         </div>
 
-        <!-- Card 2: MLLM paper -->
+        <!-- Card 3: MLLM paper -->
         <div class="project-card">
           <div class="project-teaser">
             <img src="./images/tasks.png" alt="MLLM classification tasks">
@@ -757,11 +770,26 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               arXiv
             </a>
+            <button class="project-link" onclick="toggleBibtex('bib-mllm')">BibTeX</button>
+          </div>
+          <div class="bibtex-wrapper">
+            <div class="bibtex-block" id="bib-mllm">
+              <button class="bibtex-copy" onclick="copyBibtex('bib-mllm', this)">Copy</button>
+              <pre class="bibtex-code">@article{kisel2025multimodal,
+  title   = {Multimodal Large Language Models as Image Classifiers},
+  author  = {Kisel, Nikita and Volkov, Illia and
+             Hanzelkov{\'a}, Kate{\v{r}}ina and
+             Janouskova, Klara and Matas, Jiri},
+  journal = {arXiv preprint},
+  year    = {2025},
+  url     = {https://arxiv.org/abs/2603.06578}
+}</pre>
+            </div>
           </div>
           </div>
         </div>
 
-        <!-- Card 3: BMVC 2025 paper -->
+        <!-- Card 4: BMVC 2025 paper -->
         <div class="project-card">
           <div class="project-teaser">
             <img src="./images/methods.png" alt="Precision-based fusion" class="teaser-light">
@@ -783,56 +811,11 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
               arXiv
             </a>
-          </div>
-          </div>
-        </div>
-
-        <!-- Card 4: Complete reannotation WIP -->
-        <div class="project-card">
-          <div class="project-card-body">
-          <div class="project-type">Dataset · Work in Progress</div>
-          <div class="project-title">Doomed to Re-Annotate, Forever: The ImageNet Story</div>
-          <div class="project-authors">Visual Recognition Group, CTU Prague</div>
-          <div class="project-venue">In preparation</div>
-          <p class="project-desc">
-            A comprehensive reannotation of the full ImageNet-1K validation set, addressing label errors,
-            ambiguous class definitions, and multi-label instances identified through our prior analysis.
-            Aiming to provide a cleaner, more reliable evaluation benchmark for the community.
-          </p>
-          <div class="project-links">
-            <a class="project-link" href="./neurips-blog/">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-              Project Page
-            </a>
-            <span class="project-badge badge-wip">Work in Progress</span>
-          </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ===== PUBLICATIONS ===== -->
-    <section class="section" id="publications">
-      <div class="section-title">Publications</div>
-      <div class="pub-list">
-
-        <!-- Pub 1: BMVC 2025 -->
-        <div class="pub-item">
-          <div class="pub-title">
-            <a href="https://arxiv.org/abs/2509.09311" target="_blank">
-              Image Recognition with Vision and Language Embeddings of VLMs
-            </a>
-          </div>
-          <div class="pub-authors">Illia Volkov, Nikita Kisel, Klara Janouskova, Jiri Matas</div>
-          <div class="pub-venue">British Machine Vision Conference (BMVC), 2025</div>
-          <div class="pub-links">
-            <a class="pub-link" href="https://arxiv.org/abs/2509.09311" target="_blank">arXiv</a>
-            <button class="pub-link" onclick="toggleBibtex('bib1')">BibTeX</button>
+            <button class="project-link" onclick="toggleBibtex('bib-bmvc')">BibTeX</button>
           </div>
           <div class="bibtex-wrapper">
-            <div class="bibtex-block" id="bib1">
-              <button class="bibtex-copy" onclick="copyBibtex('bib1', this)">Copy</button>
+            <div class="bibtex-block" id="bib-bmvc">
+              <button class="bibtex-copy" onclick="copyBibtex('bib-bmvc', this)">Copy</button>
               <pre class="bibtex-code">@inproceedings{volkov2025image,
   title     = {Image Recognition with Vision and Language
                Embeddings of {VLMs}},
@@ -844,60 +827,6 @@
 }</pre>
             </div>
           </div>
-        </div>
-
-        <!-- Pub 2: Blog post -->
-        <div class="pub-item">
-          <div class="pub-title">Flaws of ImageNet, Computer Vision's Favorite Dataset</div>
-          <div class="pub-authors">Nikita Kisel, Illia Volkov, Kateřina Hanzelková, Klara Janouskova*, Jiri Matas</div>
-          <div class="pub-venue">ICLR 2025 Blogpost Track, 2025</div>
-          <div class="pub-links">
-            <a class="pub-link" href="./blog/">Blog Post</a>
-            <button class="pub-link" onclick="toggleBibtex('bib2')">BibTeX</button>
-          </div>
-          <div class="bibtex-wrapper">
-            <div class="bibtex-block" id="bib2">
-              <button class="bibtex-copy" onclick="copyBibtex('bib2', this)">Copy</button>
-              <pre class="bibtex-code">@article{kisel2025flaws,
-  title   = {Flaws of {ImageNet}, Computer Vision's
-             Favorite Dataset},
-  author  = {Kisel, Nikita and Volkov, Illia and
-             Hanzelkov{\'a}, Kate{\v{r}}ina and
-             Janouskova, Klara and Matas, Jiri},
-  journal = {{ICLR} 2025 Blogpost Track},
-  year    = {2025},
-  url     = {https://klarajanouskova.github.io/ImageNet/blog/}
-}</pre>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pub 3: MLLM paper -->
-        <div class="pub-item">
-          <div class="pub-title">
-            <a href="https://arxiv.org/abs/2603.06578" target="_blank">
-              Multimodal Large Language Models as Image Classifiers
-            </a>
-          </div>
-          <div class="pub-authors">Nikita Kisel, Illia Volkov, Kateřina Hanzelková, Klara Janouskova, Jiri Matas</div>
-          <div class="pub-venue">CVPR 2026 Findings</div>
-          <div class="pub-links">
-            <a class="pub-link" href="https://arxiv.org/abs/2603.06578" target="_blank">arXiv</a>
-            <button class="pub-link" onclick="toggleBibtex('bib3')">BibTeX</button>
-          </div>
-          <div class="bibtex-wrapper">
-            <div class="bibtex-block" id="bib3">
-              <button class="bibtex-copy" onclick="copyBibtex('bib3', this)">Copy</button>
-              <pre class="bibtex-code">@article{kisel2025multimodal,
-  title   = {Multimodal Large Language Models as Image Classifiers},
-  author  = {Kisel, Nikita and Volkov, Illia and
-             Hanzelkov{\'a}, Kate{\v{r}}ina and
-             Janouskova, Klara and Matas, Jiri},
-  journal = {arXiv preprint},
-  year    = {2025},
-  url     = {https://arxiv.org/abs/2603.06578}
-}</pre>
-            </div>
           </div>
         </div>
 

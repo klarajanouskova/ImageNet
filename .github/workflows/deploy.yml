@@ -49,10 +49,11 @@ jobs:
           cp index.html _deploy/index.html
           cp config.js  _deploy/config.js
           cp -r images   _deploy/images
+          cp -r papers   _deploy/papers
           # Static project page: not built by Jekyll, so copy it verbatim.
           # Without this it is missing from the artifact and 404s, even though
           # the hub page links to it.
-          cp -r neurips-blog _deploy/neurips-blog
+          cp -r reimagenet _deploy/reimagenet
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
