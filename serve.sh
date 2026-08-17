@@ -12,7 +12,7 @@ rm -rf _deploy
   --destination ../_deploy/blog)
 
 cp index.html config.js _deploy/
-cp -r images papers reimagenet _deploy/
+cp -r images reimagenet _deploy/
 
 PORT="${1:-8000}"
 echo "Hub  → http://localhost:${PORT}/"
