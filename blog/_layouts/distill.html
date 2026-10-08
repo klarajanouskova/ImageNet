@@ -5,7 +5,7 @@
 <script>
   let thunk = () => {
     let trimIt = (e) => e.trim();
-    let getText = (e) => e.innerText;
+    let getText = (e) => e.innerText.replace(/[*✉]/g, '');
     let splitNameAndFamilyName = (e) => {
       let splitted = e.split(" ");
 
