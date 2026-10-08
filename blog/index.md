@@ -8,11 +8,11 @@ htmlwidgets: true
 hidden: false
 
 authors:
-  - name: Nikita Kisel
+  - name: Nikita Kisel*
     url:
     affiliations:
       name: Visual Recognition Group, Czech Technical University in Prague
-  - name: Illia Volkov
+  - name: Illia Volkov*
     url:
     affiliations:
       name: Visual Recognition Group, Czech Technical University in Prague
@@ -20,7 +20,7 @@ authors:
     url:
     affiliations:
       name: Faculty of Science, Charles University, Czech Republic, Prague 
-  - name: Klara Janouskova*
+  - name: Klara Janouskova ✉
     url:
     affiliations:
       name: Visual Recognition Group, Czech Technical University in Prague
