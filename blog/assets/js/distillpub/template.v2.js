@@ -2101,8 +2101,9 @@ function bylineTemplate(frontMatter) {
         </p>
       `).join('')}
     </div>
-    <div class="author-info">
-    <span class="author-label">*Corresponding author:</span>
+    <div class="author-info" style="grid-column: 1 / -1;">
+    <span class="author-label">*Equal contribution</span>
+    <span class="author-label">&nbsp;✉ Corresponding author:</span>
     <p class="mail"><a href="mailto:janoukl1@fel.cvut.cz">janoukl1@fel.cvut.cz</a></p>
     </div>
   </div>
