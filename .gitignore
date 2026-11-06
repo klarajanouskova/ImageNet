@@ -1,0 +1,5 @@
+# ReImageNet annotations (downloaded) and local prediction files
+data/reimagenet/
+preds/
+__pycache__/
+*.pyc
