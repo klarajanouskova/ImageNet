@@ -113,7 +113,7 @@ Open-weight models and exact versions are listed in the paper's supplementary (S
 
 ## License
 
-- Code: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), see [LICENSE](LICENSE).
+- Code: [MIT](LICENSE).
 - Annotations: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), distributed at https://huggingface.co/datasets/vrg-prague/ReImageNet.
 - ImageNet images are not included and remain under the ImageNet terms of use.
 
