@@ -113,8 +113,8 @@ Open-weight models and exact versions are listed in the paper's supplementary (S
 
 ## License
 
-- Code: `<FILL: MIT / Apache-2.0>`
-- Annotations: `<FILL: must match the Hugging Face card and Croissant file>`
+- Code: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), see [LICENSE](LICENSE).
+- Annotations: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), distributed at https://huggingface.co/datasets/vrg-prague/ReImageNet.
 - ImageNet images are not included and remain under the ImageNet terms of use.
 
 ## Citation
